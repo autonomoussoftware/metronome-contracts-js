@@ -5,7 +5,8 @@
   "main": "dist/metronome.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
-    "dev": "webpack --progress --colors"
+    "dev": "webpack --progress --colors",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
