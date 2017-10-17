@@ -6,7 +6,9 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "dev": "webpack --progress --colors",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src --ext .js",
+    "lint:fix": "eslint ./src --fix .js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,11 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
+    "pre-commit": "^1.2.2",
     "webpack": "^3.8.0"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }
