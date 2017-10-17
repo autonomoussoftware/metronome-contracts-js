@@ -19,16 +19,18 @@ module.exports = {
 
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   loader: 'eslint-loader',
-      //   enforce: 'pre',
-      //   include: [path.resolve(__dirname, './src')]
-      // },
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        exclude: /node_modules/,
+        include: [path.resolve(__dirname, './src')]
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: [path.resolve(__dirname, './src')]
       }
     ]
   },
