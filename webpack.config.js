@@ -13,7 +13,6 @@ module.exports = {
     publicPath: '/dist/',
     filename: outputFile,
     libraryTarget: 'umd',
-    umdNamedDefine: true,
     library
   },
 

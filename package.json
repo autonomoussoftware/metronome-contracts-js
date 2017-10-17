@@ -2,7 +2,7 @@
   "name": "metronomejs",
   "version": "1.0.0",
   "description": "Node & Browser wrappers for Metronome Token",
-  "main": "index.js",
+  "main": "dist/metronome.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "dev": "webpack --progress --colors"
@@ -18,12 +18,15 @@
     "token",
     "metronome"
   ],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/MetronomeToken/metronomejs/issues"
   },
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
+  "dependencies": {
+    "solc": "^0.4.17",
+    "trae": "^1.4.2",
+    "web3": "^1.0.0-beta.23"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -38,9 +41,5 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
     "webpack": "^3.8.0"
-  },
-  "dependencies": {
-    "solc": "^0.4.17",
-    "web3": "^1.0.0-beta.23"
   }
 }

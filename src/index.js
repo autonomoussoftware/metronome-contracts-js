@@ -1,3 +1,7 @@
-import web3 from 'web3'
+const metronome = {}
 
-export default web3
+metronome.test = function () {
+  console.log('Working...')
+}
+
+module.exports = metronome
