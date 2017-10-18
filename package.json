@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint ./src --fix .js",
-    "testrpc": "testrpc"
+    "testrpc": "testrpc",
+    "sample:node": "nodemon examples/node"
   },
   "repository": {
     "type": "git",
