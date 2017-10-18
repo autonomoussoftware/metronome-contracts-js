@@ -26,3 +26,7 @@ mtn.getLastPurchasePrice().then(function (price) {
     })
 })
 ```
+
+# Configuration 
+
+If none of the configuratio is provided, the library is going to connect to 'http://localhost:8545'.
