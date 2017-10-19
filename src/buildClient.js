@@ -1,24 +1,19 @@
+const contracts = require('../contracts')
+
 const buildClient = context => {
+  const contract = contracts.getContracts(context)
+  console.log(contracts)
   return {
+    contract,
     getBalance: buildGetBalance(context),
     getGasPrice: buildGetGasPrice(context)
   }
 }
 
-const buildGetBalance = context => () =>
-  context.web3.eth.getBalance(
-    context.account || context.web3.account,
-    (err, res) => {
-      console.log(err, res)
-    }
-  )
+const buildGetBalance = context => addr =>
+  context.web3.eth.getBalance(addr || context.config.account.addr)
 
 const buildGetGasPrice = context => () =>
-  context.web3.eth.getGasPrice((error, result) => {
-    if (error) {
-      throw error
-    }
-    console.log(result)
-  })
+  context.web3.eth.getGasPrice()
 
 module.exports = buildClient

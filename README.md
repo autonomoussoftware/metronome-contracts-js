@@ -12,7 +12,7 @@ const config = {
     user: ''
     pass: ''
   },
-  account: {}
+  account: {
     address: '0x95ba9614fb17e7b3721dde75993069ed69897684'
   }
 }
