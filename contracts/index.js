@@ -23,7 +23,7 @@ const getContracts = context => {
     contracts[contractName] = new context.web3.eth.Contract(abiDefinition) // save the contract
   }
 
-  return contracts
+  return contracts['Metronome.sol:Metronome']
 }
 
 module.exports = {
