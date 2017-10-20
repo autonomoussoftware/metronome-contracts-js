@@ -1,10 +1,10 @@
-const contracts = require('../contracts')
+const metronome = require('../contracts/interface/metronome.sol.js')
 
 const buildClient = context => {
-  const contract = contracts.getContracts(context)
-  console.log(contracts)
+  console.log(metronome)
   return {
-    contract,
+    // more info of this interface https://github.com/trufflesuite/truffle-contract
+    metronome,
     getBalance: buildGetBalance(context),
     getGasPrice: buildGetGasPrice(context)
   }
