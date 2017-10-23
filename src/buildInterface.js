@@ -1,23 +1,39 @@
-module.exports = client => ({
+
+const log = res => {
+  // result.tx => transaction hash, string
+  // result.logs => array of trigger events (1 item in this case)
+  // result.receipt => receipt object
+  console.log(res.log)
+  return res
+}
+
+const handleError = err => {
+  console.error(err)
+  throw err
+}
+
+const buildInterface = client => ({
   // ERC223
   /**
     * transfer(address _to, uint _value, string _fallback, bytes _data)
     *
-    * @param {_fallback} is the name of the function being called.
+    * @param {_to} address
+    * @param {_value} uint amount
+    * @param {_fallback} is an string with the name of the function being called.
     * @param {_data} is the encoded parameters for that function.
     *
-    * @returns {boolean ok}
+    * @returns {boolean}
     */
-  transfer: () => client.transfer().then(res => {}),
+  transfer: data => client.transfer(data).then(log).catch(handleError),
   /**
     * This is the function that ERC223 tokens are expected to call,
     * when transferring to the contract; it’s the equivalent of the fallback function.
     *
     * onTokenReceived(address _from, uint _value, bytes _data)
     *
-    * @returns {boolean ok}
+    * @returns {boolean}
     */
-  onTokenReceived: () => client.onTokenReceived().then(res => {}),
+  onTokenReceived: data => client.onTokenReceived(data).then(log).catch(handleError),
 
   // Custom ERC20-related functions
   /**
@@ -30,7 +46,7 @@ module.exports = client => ({
     *
     * @returns {boolean ok}
     */
-  approveMore: () => client.approveMore().then(res => {}),
+  approveMore: data => client.approveMore(data).then(log).catch(handleError),
   /**
     *
     * These are safer versions of approve. They’re not standard, 
@@ -41,7 +57,7 @@ module.exports = client => ({
     *
     * @returns {boolean ok}
     */
-  approveLess: () => client.approveLess().then(res => {}),
+  approveLess: data => client.approveLess(data).then(log).catch(handleError),
   /**
     *
     * Allows multiple transfers in a single transaction. 
@@ -53,7 +69,7 @@ module.exports = client => ({
     *
     * @returns {boolean ok}
     */
-  multiTransfer: () => client.multiTransfer().then(res => {}),
+  multiTransfer: data => client.multiTransfer(data).then(log).catch(handleError),
 
   // Pair
   /**
@@ -65,8 +81,8 @@ module.exports = client => ({
   *
   * @returns (uint mtnAmount)
   */
-  changeEthToMtn: () =>
-    client.changeEthToMtn().then(res => {
+  changeEthToMtn: data =>
+    client.changeEthToMtn(data).then(log).catch(handleError).then(res => {
       // result.tx => transaction hash, string
       // result.logs => array of trigger events (1 item in this case)
       // result.receipt => receipt object
@@ -81,7 +97,7 @@ module.exports = client => ({
   *
   * @returns (uint ethAmount)
   */
-  changeMtnToEth: () => client.changeMtnToEth().then(res => {}),
+  changeMtnToEth: data => client.changeMtnToEth(data).then(log).catch(handleError),
   /**
   * 
   * Return how much MTN the user would get for the given _ethAmount.
@@ -90,7 +106,7 @@ module.exports = client => ({
   *
   * @returns (uint mtnAmount)
   */
-  ifChangeEthToMtn: () => client.ifChangeEthToMtn().then(res => {}),
+  ifChangeEthToMtn: data => client.ifChangeEthToMtn(data).then(log).catch(handleError),
   /**
   * 
   * Return how much ETH the user would get for the given _mtnAmount.
@@ -99,7 +115,7 @@ module.exports = client => ({
   *
   * @returns (uint ethAmount)
   */
-  ifChangeMtnToEth: () => client.ifChangeMtnToEth().then(res => {}),
+  ifChangeMtnToEth: data => client.ifChangeMtnToEth(data).then(log).catch(handleError),
 
   // Owner
   /**
@@ -107,19 +123,19 @@ module.exports = client => ({
   * Mint the tokens owed to the founder
   *
   */
-  founderMintTokens: () => client.founderMintTokens().then(res => {}),
+  founderMintTokens: data => client.founderMintTokens(data).then(log).catch(handleError),
   /**
   *
   * Withdraw any ETH in the contract. This should only happen if sent via selfdestruct.
   *
   */
-  founderWithdrawEth: () => client.founderWithdrawEth().then(res => {}),
+  founderWithdrawEth: data => client.founderWithdrawEth(data).then(log).catch(handleError),
   /**
   *
   * Withdraw any ERC20 tokens erroneously sent to this contract.
   *
   */
-  founderWithdrawTokens: () => client.founderWithdrawTokens().then(res => {}),
+  founderWithdrawTokens: data => client.founderWithdrawTokens(data).then(log).catch(handleError),
 
   // Auction
   /**
@@ -128,7 +144,7 @@ module.exports = client => ({
   *
   * @param  {Number} bytes32
   */
-  payable: () => client.payable().then(res => {}),
+  payable: data => client.payable(data).then(log).catch(handleError),
   /**
   * Tells the user what the results would be, of a purchase at time _t
   *
@@ -143,7 +159,7 @@ module.exports = client => ({
   * @property numMinutes is the number of minutes between this prospective purchase and last one (deprecated soon)
   *
   */
-  whatWouldPurchaseDo: () => client.whatWouldPurchaseDo().then(res => {}),
+  whatWouldPurchaseDo: data => client.whatWouldPurchaseDo(data).then(log).catch(handleError),
 
   // Merkles
   // These functions aren’t intended for manual use, 
@@ -155,7 +171,7 @@ module.exports = client => ({
   *
   * @param  {Number} bytes32
   */
-  setRoot: () => client.setRoot().then(res => {}),
+  setRoot: data => client.setRoot(data).then(log).catch(handleError),
 
   /**
   * Returns true if the two addresses have matching roots.
@@ -164,7 +180,7 @@ module.exports = client => ({
   *
   * @returns  {Bool}
   */
-  rootsMatch: () => client.rootsMatch().then(res => {}),
+  rootsMatch: data => client.rootsMatch(data).then(log).catch(handleError),
 
   // Subscriptions
   /**
@@ -178,7 +194,7 @@ module.exports = client => ({
   *
   * @returns  {Bool}
   */
-  subscribe: () => client.subscribe().then(res => {}),
+  subscribe: data => client.subscribe(data).then(log).catch(handleError),
   /**
   * Cancel the subscription
   *
@@ -188,7 +204,7 @@ module.exports = client => ({
   *
   * @returns  {Bool}
   */
-  cancelSubscription: () => client.cancelSubscription().then(res => {}),
+  cancelSubscription: data => client.cancelSubscription(data).then(log).catch(handleError),
   /**
   * Get subscription info
   *
@@ -201,7 +217,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns  {Bool}
   */
-  getSubscription: () => client.getSubscription().then(res => {}),
+  getSubscription: data => client.getSubscription(data).then(log).catch(handleError),
   /**
   * Withdraw funds from someone who has subscribed to you, returns success
   *
@@ -211,7 +227,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns 
   */
-  subWithdraw: () => client.subWithdraw().then(res => {}),
+  subWithdraw: data => client.subWithdraw(data).then(log).catch(handleError),
   /**
   * Withdraw funds from a bunch of subscribers at once. Each uint in bits holds just an address.
   * 
@@ -221,5 +237,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns 
   */
-  multiSubWithdraw: () => client.multiSubWithdraw().then(res => {})
+  multiSubWithdraw: data => client.multiSubWithdraw(data).then(log).catch(handleError)
 })
+
+module.exports = buildInterface
