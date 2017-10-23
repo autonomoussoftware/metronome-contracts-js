@@ -1,3 +1,5 @@
+// const web3 = require('web3') 
+// formating of some params, web3.toWei(1, "ether")
 
 const log = res => {
   // result.tx => transaction hash, string
@@ -12,7 +14,7 @@ const handleError = err => {
   throw err
 }
 
-const buildInterface = client => ({
+const buildInterface = ({ context, client }) => ({
   // ERC223
   /**
     * transfer(address _to, uint _value, string _fallback, bytes _data)
@@ -82,11 +84,7 @@ const buildInterface = client => ({
   * @returns (uint mtnAmount)
   */
   changeEthToMtn: data =>
-    client.changeEthToMtn(data).then(log).catch(handleError).then(res => {
-      // result.tx => transaction hash, string
-      // result.logs => array of trigger events (1 item in this case)
-      // result.receipt => receipt object
-    }),
+    client.changeEthToMtn(data).then(log).catch(handleError),
 
   /**
   * 
