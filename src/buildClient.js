@@ -1,19 +1,11 @@
-const metronome = require('../contracts/interface/metronome.sol.js')
+const MetronomeContract = require('../contracts/interface/metronome.sol.js')
+const buildInterface = require('./buildInterface')
 
 const buildClient = context => {
-  console.log(metronome)
-  return {
-    // more info of this interface https://github.com/trufflesuite/truffle-contract
-    metronome,
-    getBalance: buildGetBalance(context),
-    getGasPrice: buildGetGasPrice(context)
-  }
+  const metronome = MetronomeContract.at(context.config.addr)
+  metronome.setProvider(context.provider)
+
+  return buildInterface()
 }
-
-const buildGetBalance = context => addr =>
-  context.web3.eth.getBalance(addr || context.config.account.addr)
-
-const buildGetGasPrice = context => () =>
-  context.web3.eth.getGasPrice()
 
 module.exports = buildClient
