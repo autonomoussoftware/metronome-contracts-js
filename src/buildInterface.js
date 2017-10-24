@@ -14,7 +14,15 @@ const handleError = err => {
   throw err
 }
 
-const buildInterface = ({ context, client }) => ({
+const buildInterface = ({
+  context,
+  metronome,
+  contactReciever,
+  token,
+  reservetoken,
+  erc223,
+  pair
+}) => ({
   // ERC223
   /**
     * transfer(address _to, uint _value, string _fallback, bytes _data)
@@ -26,7 +34,7 @@ const buildInterface = ({ context, client }) => ({
     *
     * @returns {boolean}
     */
-  transfer: data => client.transfer(data).then(log).catch(handleError),
+  transfer: data => erc223.transfer(data).then(log).catch(handleError),
   /**
     * This is the function that ERC223 tokens are expected to call,
     * when transferring to the contract; it’s the equivalent of the fallback function.
@@ -35,7 +43,7 @@ const buildInterface = ({ context, client }) => ({
     *
     * @returns {boolean}
     */
-  onTokenReceived: data => client.onTokenReceived(data).then(log).catch(handleError),
+  onTokenReceived: data => contactReciever.onTokenReceived(data).then(log).catch(handleError),
 
   // Custom ERC20-related functions
   /**
@@ -48,7 +56,7 @@ const buildInterface = ({ context, client }) => ({
     *
     * @returns {boolean ok}
     */
-  approveMore: data => client.approveMore(data).then(log).catch(handleError),
+  approveMore: data => token.approveMore(data).then(log).catch(handleError),
   /**
     *
     * These are safer versions of approve. They’re not standard, 
@@ -59,7 +67,7 @@ const buildInterface = ({ context, client }) => ({
     *
     * @returns {boolean ok}
     */
-  approveLess: data => client.approveLess(data).then(log).catch(handleError),
+  approveLess: data => token.approveLess(data).then(log).catch(handleError),
   /**
     *
     * Allows multiple transfers in a single transaction. 
@@ -71,7 +79,7 @@ const buildInterface = ({ context, client }) => ({
     *
     * @returns {boolean ok}
     */
-  multiTransfer: data => client.multiTransfer(data).then(log).catch(handleError),
+  multiTransfer: data => reservetoken.multiTransfer(data).then(log).catch(handleError),
 
   // Pair
   /**
@@ -84,7 +92,7 @@ const buildInterface = ({ context, client }) => ({
   * @returns (uint mtnAmount)
   */
   changeEthToMtn: data =>
-    client.changeEthToMtn(data).then(log).catch(handleError),
+    pair.changeEthToMtn(data).then(log).catch(handleError),
 
   /**
   * 
@@ -95,7 +103,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns (uint ethAmount)
   */
-  changeMtnToEth: data => client.changeMtnToEth(data).then(log).catch(handleError),
+  changeMtnToEth: data => pair.changeMtnToEth(data).then(log).catch(handleError),
   /**
   * 
   * Return how much MTN the user would get for the given _ethAmount.
@@ -104,7 +112,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns (uint mtnAmount)
   */
-  ifChangeEthToMtn: data => client.ifChangeEthToMtn(data).then(log).catch(handleError),
+  ifChangeEthToMtn: data => pair.ifChangeEthToMtn(data).then(log).catch(handleError),
   /**
   * 
   * Return how much ETH the user would get for the given _mtnAmount.
@@ -113,7 +121,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns (uint ethAmount)
   */
-  ifChangeMtnToEth: data => client.ifChangeMtnToEth(data).then(log).catch(handleError),
+  ifChangeMtnToEth: data => pair.ifChangeMtnToEth(data).then(log).catch(handleError),
 
   // Owner
   /**
@@ -121,19 +129,19 @@ const buildInterface = ({ context, client }) => ({
   * Mint the tokens owed to the founder
   *
   */
-  founderMintTokens: data => client.founderMintTokens(data).then(log).catch(handleError),
+  founderMintTokens: data => metronome.founderMintTokens(data).then(log).catch(handleError),
   /**
   *
   * Withdraw any ETH in the contract. This should only happen if sent via selfdestruct.
   *
   */
-  founderWithdrawEth: data => client.founderWithdrawEth(data).then(log).catch(handleError),
+  founderWithdrawEth: data => metronome.founderWithdrawEth(data).then(log).catch(handleError),
   /**
   *
   * Withdraw any ERC20 tokens erroneously sent to this contract.
   *
   */
-  founderWithdrawTokens: data => client.founderWithdrawTokens(data).then(log).catch(handleError),
+  founderWithdrawTokens: data => metronome.founderWithdrawTokens(data).then(log).catch(handleError),
 
   // Auction
   /**
@@ -142,7 +150,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @param  {Number} bytes32
   */
-  payable: data => client.payable(data).then(log).catch(handleError),
+  payable: data => metronome.payable(data).then(log).catch(handleError),
   /**
   * Tells the user what the results would be, of a purchase at time _t
   *
@@ -157,7 +165,7 @@ const buildInterface = ({ context, client }) => ({
   * @property numMinutes is the number of minutes between this prospective purchase and last one (deprecated soon)
   *
   */
-  whatWouldPurchaseDo: data => client.whatWouldPurchaseDo(data).then(log).catch(handleError),
+  whatWouldPurchaseDo: data => metronome.whatWouldPurchaseDo(data).then(log).catch(handleError),
 
   // Merkles
   // These functions aren’t intended for manual use, 
@@ -169,7 +177,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @param  {Number} bytes32
   */
-  setRoot: data => client.setRoot(data).then(log).catch(handleError),
+  setRoot: data => reservetoken.setRoot(data).then(log).catch(handleError),
 
   /**
   * Returns true if the two addresses have matching roots.
@@ -178,7 +186,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns  {Bool}
   */
-  rootsMatch: data => client.rootsMatch(data).then(log).catch(handleError),
+  rootsMatch: data => reservetoken.rootsMatch(data).then(log).catch(handleError),
 
   // Subscriptions
   /**
@@ -192,7 +200,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns  {Bool}
   */
-  subscribe: data => client.subscribe(data).then(log).catch(handleError),
+  subscribe: data => reservetoken.subscribe(data).then(log).catch(handleError),
   /**
   * Cancel the subscription
   *
@@ -202,7 +210,7 @@ const buildInterface = ({ context, client }) => ({
   *
   * @returns  {Bool}
   */
-  cancelSubscription: data => client.cancelSubscription(data).then(log).catch(handleError),
+  cancelSubscription: data => reservetoken.cancelSubscription(data).then(log).catch(handleError),
   /**
   * Get subscription info
   *
@@ -215,7 +223,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns  {Bool}
   */
-  getSubscription: data => client.getSubscription(data).then(log).catch(handleError),
+  getSubscription: data => reservetoken.getSubscription(data).then(log).catch(handleError),
   /**
   * Withdraw funds from someone who has subscribed to you, returns success
   *
@@ -225,7 +233,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns 
   */
-  subWithdraw: data => client.subWithdraw(data).then(log).catch(handleError),
+  subWithdraw: data => reservetoken.subWithdraw(data).then(log).catch(handleError),
   /**
   * Withdraw funds from a bunch of subscribers at once. Each uint in bits holds just an address.
   * 
@@ -235,7 +243,7 @@ ent withdraw each week lastWithdrawTime is when the recipient last withdrew
   *
   * @returns 
   */
-  multiSubWithdraw: data => client.multiSubWithdraw(data).then(log).catch(handleError)
+  multiSubWithdraw: data => reservetoken.multiSubWithdraw(data).then(log).catch(handleError)
 })
 
 module.exports = buildInterface
