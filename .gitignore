@@ -1,4 +1,7 @@
-node_modules
-.log
 .DS_Store
-coverage
+.vscode
+build
+/node_modules
+contracts/.placeholder
+test/.placeholder
+
