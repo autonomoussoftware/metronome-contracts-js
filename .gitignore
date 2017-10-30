@@ -1,7 +1,8 @@
 .DS_Store
 .vscode
 build
-/node_modules
+node_modules
+coverage
 contracts/.placeholder
 test/.placeholder
 
