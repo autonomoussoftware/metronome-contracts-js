@@ -18,7 +18,7 @@ mtn.then(mtn => mtn.minimumPrice())
 
 ## mtn.config.json
 
-In this json, you should provide the addrs of the contracts involved in metronome.
+you must provide the addrs of the contracts involved in metronome.
 Next is an example of full config object:
 
 ```

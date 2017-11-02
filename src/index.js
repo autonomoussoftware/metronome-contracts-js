@@ -1,5 +1,6 @@
 const Web3 = require('web3')
 const buildClient = require('./buildClient')
+
 const metronome = {}
 
 const defaultConfig = {
