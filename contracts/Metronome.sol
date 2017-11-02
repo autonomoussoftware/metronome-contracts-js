@@ -33,10 +33,10 @@ contract Metronome is Pricer, Owned, Constants {
 	_;
     }
 
-    function isRunning() constant returns (bool) {
+    function isRunning() public constant returns (bool) {
         return (currTime() >= auctionStartTime);
     }
-    function currentTime() constant returns (uint) {
+    function currentTime() public constant returns (uint) {
         return currTime();
     }
 
@@ -45,7 +45,7 @@ contract Metronome is Pricer, Owned, Constants {
     //this way we don't have to read storage in prod
     //TODO: make internal
     uint currtime;
-    function currTime() returns (uint) { 
+    function currTime() public returns (uint) { 
 	if (block.number > 100000 && block.timestamp > 1000000) {
 	    return block.timestamp;
 	} else {
@@ -78,7 +78,7 @@ contract Metronome is Pricer, Owned, Constants {
 		  address _token, 
 		  uint _minimumPrice,
 		  uint _startingPrice) 
-    onlyOwner
+    public onlyOwner
     {
         require(founder == 0x0);
         require(_founder != 0x0);
@@ -115,7 +115,7 @@ contract Metronome is Pricer, Owned, Constants {
     /// Trip safety cutoff
     ///
     /// Only allowed before initial auction starts
-    function stopEverything() onlyOwner {
+    function stopEverything() public onlyOwner {
 	if (auctionStartTime > currTime()) revert();
 	auctionStartTime = auctionStartTime + 1000 years;
     }
@@ -145,16 +145,37 @@ contract Metronome is Pricer, Owned, Constants {
         //we have to ensure  that anyway 
         //if we used safemath and it failed then no more auctions
         //With reasonable decimal places, is fine
-        return (globalDailySupply * tokensHere) / globalMtnSupply();
+        //return (globalDailySupply * tokensHere) / globalMtnSupply();
+
+        //the above returned zero
+        //skipping until sure we need this
         
         //or return globalDailySupply if we don't do cross-chain cap
+        return globalDailySupply;
     }
+
+    /// Actually start the next day's auction, using parameters from nextAuction()
+    function restartAuction() 
+    private 
+    {
+	//If we were in first auction, say it's complete now
+	if (!finishedFirstAuction) {
+	    finishedFirstAuction = true;
+	}
+
+	var (t, price, tok) = 
+	    nextAuction(currTime(), auctionStartTime, lastPurchasePrice);
+        auctionStartTime = t;
+        mintRights += tok - availableTokens; //(just want additional)
+        availableTokens = tok;
+        lastPurchasePrice = price;
+    }
+
 
     /// Get the starting parameters of the next daily auction
     ///
     /// @param _t The block.timestamp of the first contribution in next auction
     /// @param _auctionStartTime The prior auction's start time
-    /// @param _availableTokens The tokens remaining from prior auction
     /// @param _lastPurchasePrice The lowest purchase price in the prior auction
     /// @return _startTime The start time of the new auction
     /// @return _startPrice Initial price in the new auction (weiPerToken)
@@ -162,23 +183,8 @@ contract Metronome is Pricer, Owned, Constants {
     function nextAuction(
 	uint _t, 
 	uint _auctionStartTime, 
-	uint _availableTokens,
 	uint _lastPurchasePrice) 
-    constant
-    returns (uint _startTime, uint _startPrice, uint _startTokens) 
-    {
-	var (t, price, tok) = 
-	    nextAuctionInternal(_t, _auctionStartTime, _lastPurchasePrice);
-        _startTime = t;
-        _startPrice = price;
-        _startTokens = tok + _availableTokens;
-    }
-
-    function nextAuctionInternal(
-	uint _t, 
-	uint _auctionStartTime, 
-	uint _lastPurchasePrice) 
-    internal
+    public constant
     returns (uint _startTime, uint _startPrice, uint _auctionTokens) 
     {
         uint elapsed = _t - _auctionStartTime;
@@ -201,27 +207,8 @@ contract Metronome is Pricer, Owned, Constants {
         _startPrice = (_lastPurchasePrice * 2) + 1;
     }
 
-    /// Actually start the next day's auction, using parameters from nextAuction()
-    function restartAuction() 
-    private 
-    {
-	//save the last price to ringbuffer if we end up using it
-	//insertDaysEndPrice(lastPurchasePrice);
-
-	//If we were in first auction, say it's complete now
-	if (!finishedFirstAuction) {
-	    finishedFirstAuction = true;
-	}
-
-	var (t, price, tok) = 
-	    nextAuctionInternal(currTime(), auctionStartTime, lastPurchasePrice);
-        auctionStartTime = t;
-        availableTokens += tok;
-        mintRights += tok;
-        lastPurchasePrice = price;
-    }
-
     /// Internal function to calculate results of a purchase
+    /// Maybe make this public and skip whatWouldPurchaseDo
     ///
     /// Get number of minutes since the last purchase
     /// Multiply price by .99 for each full minute since last purchase
@@ -236,13 +223,13 @@ contract Metronome is Pricer, Owned, Constants {
     /// @return refund The eth refund the purchaser will get
     /// @return numMinutes The integer number of minutes since prior purchase
     function calcPurchase(uint _eth, uint _t)
-    internal
+    public constant //TODO: make internal 
     returns (uint weiPerToken, uint tokens, uint refund, uint numMinutes)
     {
-        uint n = (_t - auctionStartTime) / 1 minutes;
-        weiPerToken = currentPrice(lastPurchasePrice, n);
-	if (weiPerToken < minimumPrice || weiPerToken < _eth) {
-	    return (0, 0, 0, 0);
+        numMinutes = (_t - auctionStartTime) / 1 minutes;
+        weiPerToken = currentPrice(lastPurchasePrice, numMinutes);
+	if (weiPerToken < minimumPrice || weiPerToken > _eth) {
+	    //return (0, 0, 0, numMinutes); //TODO uncommment
 	}
         uint calctokens = _eth / weiPerToken; 
 	tokens = calctokens;   
@@ -251,23 +238,9 @@ contract Metronome is Pricer, Owned, Constants {
 	    uint ethPaying = availableTokens * weiPerToken;
             refund = _eth - ethPaying;
         }
-	numMinutes = n;
     }
 
-    /// Find out what the results would be of a prospective purchase
-    ///
-    /// @param _eth Amount of ether the purchaser will pay
-    /// @param _t Prospective purchase timestamp
-    /// @return weiPerToken The purchase price
-    /// @return tokens Number of tokens purchaser will get
-    /// @return refund The eth refund the purchaser will get
-    /// @return numMinutes The integer number of minutes since prior purchase
-    function whatWouldPurchaseDo(uint _eth, uint _t)
-    constant
-    returns (uint weiPerToken, uint tokens, uint refund, uint numMinutes)
-    {
-	(weiPerToken, tokens, refund, numMinutes) = calcPurchase(_eth, _t);
-    }
+    event LogNumber(uint x);
 
     /// Take eth payment, award tokens, possibly send refund
     /// 
@@ -278,9 +251,10 @@ contract Metronome is Pricer, Owned, Constants {
     /// If this is first auction, reserve 20% of eth for the founder
     /// Mint the tokens, send the refund, send remaining eth to price support contract
     function () 
-    payable 
+    public payable 
     running
     {
+        LogNumber(msg.value);
 
         if (currTime() - auctionStartTime > 1 days) {
             restartAuction();
@@ -324,7 +298,7 @@ contract Metronome is Pricer, Owned, Constants {
     }       
     uint founderTokens;
 
-    function founderMintTokens() onlyOwner {
+    function founderMintTokens() public onlyOwner {
         uint tokens = founderTokens;
         founderTokens = 0;
         require(IToken(token).mint(founder, tokens));
@@ -334,16 +308,30 @@ contract Metronome is Pricer, Owned, Constants {
     ///
     /// We never store eth balance for a purchaser
     /// so this won't happen except by selfdestruct transfer
-    function founderWithdrawEth() onlyOwner {
+    function founderWithdrawEth() public onlyOwner {
 	founder.transfer(this.balance);
     }
 
     /// Allow founder to withdraw arbitrary ERC20 tokens on this contract's address
     ///
     /// @param _token The address of the ERC20 token
-    function founderWithdrawTokens(address _token) onlyOwner {
-	IToken t = IToken(_token);
-	t.transfer(founder, t.balanceOf(this));
+    function founderWithdrawTokens(address _token) public onlyOwner {
+	IToken(_token).transfer(founder, IToken(_token).balanceOf(this));
+    }
+
+    /// Find out what the results would be of a prospective purchase
+    ///
+    /// @param _eth Amount of ether the purchaser will pay
+    /// @param _t Prospective purchase timestamp
+    /// @return weiPerToken The purchase price
+    /// @return tokens Number of tokens purchaser will get
+    /// @return refund The eth refund the purchaser will get
+    /// @return numMinutes The integer number of minutes since prior purchase
+    function whatWouldPurchaseDo(uint _eth, uint _t)
+    public constant
+    returns (uint weiPerToken, uint tokens, uint refund, uint numMinutes)
+    {
+	(weiPerToken, tokens, refund, numMinutes) = calcPurchase(_eth, _t);
     }
 
     //************************************************************

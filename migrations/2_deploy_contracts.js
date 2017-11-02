@@ -1,13 +1,13 @@
-let Metronome = artifacts.require('./Metronome.sol')
-let ReserveToken = artifacts.require('./ReserveToken.sol')
-let SmartToken = artifacts.require('./SmartToken.sol')
-let Aux = artifacts.require('./Aux.sol')
-let Pair = artifacts.require('./Pair.sol')
+var Metronome = artifacts.require('./Metronome.sol')
+var ReserveToken = artifacts.require('./ReserveToken.sol')
+var SmartToken = artifacts.require('./Token.sol')
+var Aux = artifacts.require('./Aux.sol')
+var Pair = artifacts.require('./Pair.sol')
 
 module.exports = function (deployer) {
-  let founder = '0xdeadbeef'
+  var founder = '0xdeadbeef'
 
-  let met, reserve, smart, aux, pair
+  var met, reserve, smart, aux, pair
   deployer
     .then(function () {
       return Metronome.new()

@@ -1,14 +1,15 @@
 pragma solidity ^0.4.13;
 
-import './IToken.sol';
+import './Token.sol';
+import './ReserveToken.sol';
 import './Formula.sol';
 
 contract Pair is Formula {
     //there are always two assets with ratio 0.5
     //and we're hardcoding one asset to be ETH
 
-    ISmartToken public smartToken;
-    IReserveToken public reserveToken;
+    Token public smartToken;
+    ReserveToken public reserveToken;
     address aux;
 
     enum WhichToken { Eth, Mtn }
@@ -16,9 +17,10 @@ contract Pair is Formula {
     bool public changingEnabled = true; 
 
     function init(address _reserveToken, address _smartToken, address _aux)
+    public 
     {
-        reserveToken = IReserveToken(_reserveToken);
-        smartToken = ISmartToken(_smartToken);
+        reserveToken = ReserveToken(_reserveToken);
+        smartToken = Token(_smartToken);
         aux = _aux;
     }
 
@@ -76,12 +78,13 @@ contract Pair is Formula {
     }
 
     function mintFromEth(uint _minReturn) 
-    payable 
+    public payable 
     returns (uint amount) {
         amount = mint(WhichToken.Eth, msg.value, _minReturn);
     }
 
-    function mintFromReserve(uint _depositAmount, uint _minReturn) returns (uint amount) {
+    function mintFromReserve(uint _depositAmount, uint _minReturn) 
+    public returns (uint amount) {
         amount = mint(WhichToken.Mtn, _depositAmount, _minReturn);
 
         //actually transfer the reserve tokens into Pair
@@ -90,7 +93,7 @@ contract Pair is Formula {
         require(reserveToken.transferByPair(msg.sender, this, _depositAmount)); 
     }
 
-    function depositFromAux() payable {
+    function () public payable {
         require(msg.sender == aux);
         //do nothing, just dumping in ETH
     }
@@ -125,10 +128,12 @@ contract Pair is Formula {
         return amount;
     }
 
-    function redeemForEth(uint _amount, uint _minReturn) returns (uint amount) {
+    function redeemForEth(uint _amount, uint _minReturn) 
+    public returns (uint amount) {
         return redeem(WhichToken.Eth, _amount, _minReturn);
     }
-    function redeemForReserve(uint _amount, uint _minReturn) returns (uint amount) {
+    function redeemForReserve(uint _amount, uint _minReturn) 
+    public returns (uint amount) {
         return redeem(WhichToken.Mtn, _amount, _minReturn);
     }
 
@@ -149,9 +154,10 @@ contract Pair is Formula {
         return redemptionReturn(to, mintRet);
     }
 
+    //TODO: change to: tradeETHforMTN and vice versa
     ///changes a specific amount of _fromToken to _toToken
     function change(WhichToken whichFrom, uint _amount, uint _minReturn)
-    returns (uint amount)
+    public returns (uint amount)
     {
         WhichToken to = WhichToken.Mtn;
         if (whichFrom == WhichToken.Mtn) to = WhichToken.Eth;

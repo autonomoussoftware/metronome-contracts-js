@@ -12,19 +12,21 @@ contract Aux is Owned {
     address pair;
     address auction;
 
-    function init(address _pair, address _auction) onlyOwner {
+    function init(address _pair, address _auction) 
+    public onlyOwner {
         pair = _pair;
         auction = _auction;
     }
 
-    function closeAuction() {
+    function closeAuction() public {
         require(msg.sender == auction);
         uint val = this.balance / 100;
-        IPair(pair).depositFromAux.value(val)();
+        IPair(pair).call.value(val)();
     }
 
-    function () payable {
+    function () public payable {
         require(msg.sender == auction); 
     }
 }
+
 

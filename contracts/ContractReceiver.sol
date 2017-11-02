@@ -6,5 +6,5 @@ pragma solidity ^0.4.13;
  
 contract ContractReceiver {
     function onTokenReceived(address _from, uint _value, bytes _data)
-    returns (bool) { }
+    public returns (bool) { }
 }

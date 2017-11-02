@@ -45,7 +45,7 @@ contract Formula is FixedMath {
         uint smartTokenSupply,    //S
         uint reserveTokensSent,   //E
         uint reserveTokenBalance) //R
-    returns (uint) 
+    public returns (uint) 
     {
         //T = S * (sqrt(1 + E/R) - 1)
 
@@ -64,7 +64,7 @@ contract Formula is FixedMath {
         uint smartTokenSupply, 
         uint smartTokensSent, 
         uint reserveTokenBalance)
-    returns (uint) 
+    public returns (uint) 
     {
         //E = R * (1 - (1 - T/S)**2)
         
