@@ -28,9 +28,9 @@ const build = ({ context, metronome, log, handleError }) => ({
   *
   * @param  {Number} bytes32
   */
-  payable: ({ from, value }) =>
+  payable: ({ from, value, gas }) =>
     metronome
-      .sendTransaction({ from, value: context.web3.toWei(value, 'ether') })
+      .sendTransaction({ from, gas, value: context.web3.toWei(value, 'ether') })
       .then(log)
       .catch(handleError),
   minimumPrice: () =>
@@ -51,7 +51,7 @@ const build = ({ context, metronome, log, handleError }) => ({
   */
   whatWouldPurchaseDo: ({ from, value, time }) =>
     metronome.whatWouldPurchaseDo
-      .call({ from, value: context.web3.toWei(value, 'ether'), time })
+      .call(context.web3.toWei(value, 'ether'), time, { from })
       .then(log)
       .catch(handleError)
 })

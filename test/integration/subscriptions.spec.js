@@ -1,6 +1,5 @@
 const chai = require('chai')
 const Web3 = require('web3')
-var moment = require('moment')
 
 // const ethWallet = require('ethereumjs-wallet')
 // const wallet = ethWallet.generate()

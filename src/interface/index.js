@@ -9,7 +9,6 @@ const log = res => {
   // result.tx => transaction hash, string
   // result.logs => array of trigger events (1 item in this case)
   // result.receipt => receipt object
-  console.log(res)
   return res
 }
 

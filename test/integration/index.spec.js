@@ -1,6 +1,5 @@
 const chai = require('chai')
 const Web3 = require('web3')
-var moment = require('moment')
 
 // const ethWallet = require('ethereumjs-wallet')
 // const wallet = ethWallet.generate()
@@ -20,19 +19,19 @@ const config = {
   },
   contracts: {
     metronome: {
-      addr: '0xb7c76bf1dc1032fc588280e5a261ab7d1b2677d6'
+      addr: '0x6f3edef37761576944ae316873bdbba82d4c6462'
     },
     reservetoken: {
-      addr: '0x83ca2cbed33652b6b93a9f4c1a6a93ed6f7de9d4'
+      addr: '0x68fb00f02629591271242e35227ad2e23f42430f'
     },
     smartContract: {
-      addr: '0xae9f4f03c991558092ad60556cb36b4908bcc806'
+      addr: '0x6140c07376eabb3a08132358fb579fa6ddf2bf90'
     },
     aux: {
-      addr: '0x3381421f6e84c67f4625a511d4a5cbbdafd70c3a'
+      addr: '0x85a597646c80f183ca03399bde962afc5ddd6dc4'
     },
     pair: {
-      addr: '0x2997ce1b1be5fdb0ab735688466793e13c7ae2a0'
+      addr: '0x35a5a4ae879fd3ab4b181cc539e99c11d00fc455'
     }
   }
 }
@@ -104,17 +103,26 @@ test('should init the client correctly', () => {
   })
 })
 
-test.skip('should get auction data', async () => {
+test('should get auction data', async () => {
   const mtn = metronome.createInstance(config)
   var accounts = web3.eth.accounts
 
-  return mtn.then(mtn => {
-    return mtn.whatWouldPurchaseDo({ from: accounts[0], value: 1, time: moment.unix() })
-      .then(res => {
-        console.log(res)
-        return res
-      })
-  })
+  return mtn.then(mtn => mtn.metronome.whatWouldPurchaseDo({ from: accounts[0], value: 1, time: 180 }))
+})
+
+test.skip('should get name data', async () => {
+  const mtn = metronome.createInstance(config)
+  return mtn.then(mtn => mtn.erc20.getName())
+})
+
+test.skip('should get symbol data', async () => {
+  const mtn = metronome.createInstance(config)
+  return mtn.then(mtn => mtn.erc20.getSymbol())
+})
+
+test.skip('should get decimal data', async () => {
+  const mtn = metronome.createInstance(config)
+  return mtn.then(mtn => mtn.erc20.getDecimals())
 })
 
 test.skip('should deposit eth and get mtn', async () => {
@@ -122,7 +130,7 @@ test.skip('should deposit eth and get mtn', async () => {
   var accounts = web3.eth.accounts
 
   return mtn.then(mtn => {
-    return mtn.payable({ from: accounts[0], value: 1 })
+    return mtn.metronome.payable({ from: accounts[0], value: 1, gas: 1000000 })
       .then(res => {
         console.log(res)
         return res

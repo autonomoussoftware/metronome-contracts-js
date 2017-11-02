@@ -1,7 +1,7 @@
 const contract = require('truffle-contract')
 
 const MetronomeContract = require('../build/Contracts/Metronome.json')
-const ReserveTokenContract = require('../build/Contracts/ReserveToken.json')
+const ReserveTokenContract = require('../build/Contracts/MTNToken.json')
 const PairContract = require('../build/Contracts/Pair.json')
 
 const mtninterface = require('./interface')

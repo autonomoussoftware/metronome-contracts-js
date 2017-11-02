@@ -2,69 +2,58 @@
 const build = ({ context, reservetoken, log, handleError }) => ({
   // Standard ERC20-related functions
   getName: data =>
-    reservetoken.minimumPrice
+    reservetoken.name
       .call()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   getSymbol: data =>
-    reservetoken.minimumPrice
+    reservetoken.symbol
       .call()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   getDecimals: data =>
-    reservetoken.minimumPrice
+    reservetoken.decimals
       .call()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   totalSupply: data =>
     reservetoken
       .totalSupply()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   balanceOf: data =>
     reservetoken
       .balanceOf()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   transfer: data =>
     reservetoken
       .transfer()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   transferFrom: data =>
     reservetoken
       .transferFrom()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   approve: data =>
     reservetoken
       .approve()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   allowance: data =>
     reservetoken
       .allowance()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   TransferEvent: data =>
     reservetoken
       .Transfer()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   ApprovalEvent: data =>
     reservetoken
       .Approval()
-      .approveLess(data)
       .then(log)
       .catch(handleError),
   // Custom ERC20-related functions
