@@ -41,27 +41,67 @@ const web3 = new Web3(new Web3.providers.HttpProvider(config.rpc.host)) // this 
 
 test('should init the client correctly', () => {
   const mtn = metronome.createInstance(config)
-  return mtn.then(mtn =>
+  return mtn.then(mtn => {
     mtn.should.have.all.keys(
+      'autonomusConverter',
+      'erc20',
+      'erc223',
+      'merkles',
+      'metronome',
+      'subscriptions'
+    )
+
+    mtn.autonomusConverter.should.have.all.keys(
       'changeEthToMtn',
       'changeMtnToEth',
       'ifChangeEthToMtn',
-      'ifChangeMtnToEth',
+      'ifChangeMtnToEth'
+    )
+
+    mtn.erc20.should.have.all.keys(
+      'getName',
+      'getSymbol',
+      'getDecimals',
+      'totalSupply',
+      'balanceOf',
+      'transfer',
+      'transferFrom',
+      'approve',
+      'allowance',
+      'TransferEvent',
+      'ApprovalEvent',
+      'approveMore',
+      'approveLess',
+      'multiTransfer'
+    )
+
+    mtn.erc223.should.have.all.keys(
+      'transfer',
+      'onTokenReceived'
+    )
+
+    mtn.merkles.should.have.all.keys(
+      'setRoot',
+      'rootsMatch'
+    )
+
+    mtn.metronome.should.have.all.keys(
+      'payable',
+      'whatWouldPurchaseDo',
       'founderMintTokens',
       'founderWithdrawEth',
       'founderWithdrawTokens',
-      'payable',
-      'whatWouldPurchaseDo',
-      'setRoot',
-      'rootsMatch',
+      'minimumPrice'
+    )
+
+    mtn.subscriptions.should.have.all.keys(
       'subscribe',
       'cancelSubscription',
       'getSubscription',
       'subWithdraw',
-      'multiSubWithdraw',
-      'minimumPrice'
+      'multiSubWithdraw'
     )
-  )
+  })
 })
 
 test.skip('should get auction data', async () => {
