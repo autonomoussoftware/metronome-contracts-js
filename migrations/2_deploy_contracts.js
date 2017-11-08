@@ -4,7 +4,7 @@ var SmartToken = artifacts.require('./Token.sol')
 var Aux = artifacts.require('./Aux.sol')
 var Pair = artifacts.require('./Pair.sol')
 
-module.exports = function (deployer) {
+module.exports = function (deployer, network, accounts) {
   var founder = '0xdeadbeef'
 
   var met, reserve, smart, aux, pair
@@ -14,22 +14,27 @@ module.exports = function (deployer) {
     })
     .then(function (instance) {
       met = instance
+      console.log('Met ready')
       return ReserveToken.new()
     })
     .then(function (instance) {
       reserve = instance
+      console.log('ReserveToken ready')
       return SmartToken.new()
     })
     .then(function (instance) {
       smart = instance
+      console.log('Smart ready')
       return Aux.new()
     })
     .then(function (instance) {
       aux = instance
+      console.log('Pair ready')
       return Pair.new()
     })
     .then(function (instance) {
       pair = instance
+      console.log('Reserve ready')
       return ReserveToken.new()
     })
     .then(function (instance) {

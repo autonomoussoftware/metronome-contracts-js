@@ -108,6 +108,7 @@ test('should get auction data', async () => {
   var accounts = web3.eth.accounts
 
   return mtn.then(mtn => mtn.metronome.whatWouldPurchaseDo({ from: accounts[0], value: 1, time: 180 }))
+    .then(res => console.log(res))
 })
 
 test.skip('should get name data', async () => {
@@ -125,7 +126,7 @@ test.skip('should get decimal data', async () => {
   return mtn.then(mtn => mtn.erc20.getDecimals())
 })
 
-test.skip('should deposit eth and get mtn', async () => {
+test('should deposit eth and get mtn', async () => {
   const mtn = metronome.createInstance(config)
   var accounts = web3.eth.accounts
 
