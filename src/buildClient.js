@@ -1,4 +1,4 @@
-const contract = require('truffle-contract')
+import web3 from 'web3';
 
 const MetronomeContract = require('../build/Contracts/Metronome.json')
 const ReserveTokenContract = require('../build/Contracts/MTNToken.json')
@@ -7,29 +7,22 @@ const PairContract = require('../build/Contracts/Pair.json')
 const mtninterface = require('./interface')
 
 const buildClient = context => {
-  // const metronome = MetronomeContract.at(context.config.addr)
   const config = context.config
 
-  const metronome = contract(MetronomeContract)
-  const reservetoken = contract(ReserveTokenContract)
-  const pair = contract(PairContract)
+  const metronome = new web3.eth.Contract(MetronomeContract)
+  const reservetoken = new web3.eth.Contract(ReserveTokenContract)
+  const pair = new web3.eth.Contract(PairContract)
 
-  metronome.setProvider(context.provider)
-  reservetoken.setProvider(context.provider)
-  pair.setProvider(context.provider)
+  metronome.options.address(config.contracts.metronome)
+  reservetoken.options.address(config.contracts.reservetoken)
+  pair.options.address(config.contracts.pair)
 
-  return Promise.all([
-    metronome.at(config.contracts.metronome.addr),
-    reservetoken.at(config.contracts.reservetoken.addr),
-    pair.at(config.contracts.pair.addr)
-  ]).then(([metronome, reservetoken, pair]) =>
-    mtninterface.buildInterface({
-      context,
-      metronome,
-      reservetoken,
-      pair
-    })
-  )
+  return mtninterface.buildInterface({
+    context,
+    metronome,
+    reservetoken,
+    pair
+  })
 }
 
 module.exports = buildClient

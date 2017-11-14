@@ -8,21 +8,11 @@ const defaultConfig = {
     host: 'http://localhost:8545'
   },
   contracts: {
-    metronome: {
-      addr: null
-    },
-    reservetoken: {
-      addr: null
-    },
-    smartContract: {
-      addr: null
-    },
-    aux: {
-      addr: null
-    },
-    pair: {
-      addr: null
-    }
+    metronome: null,
+    reservetoken: null,
+    smartContract: null,
+    aux: null,
+    pair: null
   }
 }
 

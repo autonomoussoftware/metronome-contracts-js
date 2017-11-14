@@ -29,21 +29,11 @@ const defaultConfig = {
     pass: 'Im not batman'
   },
   contracts: {
-    metronome: {
-      addr: '0xb7c76bf1dc1032fc588280e5a261ab7d1b2677d6'
-    },
-    reservetoken: {
-      addr: '0x83ca2cbed33652b6b93a9f4c1a6a93ed6f7de9d4'
-    },
-    smartContract: {
-      addr: '0xae9f4f03c991558092ad60556cb36b4908bcc806'
-    },
-    aux: {
-      addr: '0x3381421f6e84c67f4625a511d4a5cbbdafd70c3a'
-    },
-    pair: {
-      addr: '0x2997ce1b1be5fdb0ab735688466793e13c7ae2a0'
-    }
+    metronome: '0xb7c76bf1dc1032fc588280e5a261ab7d1b2677d6',
+    reservetoken: '0x83ca2cbed33652b6b93a9f4c1a6a93ed6f7de9d4',
+    smartContract: '0xae9f4f03c991558092ad60556cb36b4908bcc806',
+    aux: '0x3381421f6e84c67f4625a511d4a5cbbdafd70c3a',
+    pair: '0x2997ce1b1be5fdb0ab735688466793e13c7ae2a0'
   }
 }
 ``` 
