@@ -4,14 +4,10 @@
   "description": "Node & Browser wrappers for Metronome Token",
   "main": "dist/metronome.js",
   "scripts": {
-    "build": "truffle build && cross-env NODE_ENV=production webpack --progress --colors -p",
+    "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "dev": "webpack --progress --colors --watch",
-    "test": "jest test",
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint ./src --fix .js",
-    "testrpc": "testrpc",
-    "migrate": "truffle migrate",
-    "compile": "truffle compile",
     "sample:node": "nodemon examples/node"
   },
   "repository": {
@@ -30,9 +26,7 @@
   },
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
   "dependencies": {
-    "bignumber.js": "^4.1.0",
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
+    "human-standard-token-abi": "^1.0.2",
     "web3": "^1.0.0-beta.26"
   },
   "devDependencies": {
@@ -47,10 +41,7 @@
     "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "jest": "^21.2.1",
-    "nodemon": "^1.12.1",
     "pre-commit": "^1.2.2",
-    "truffle": "^3.4.11",
     "webpack": "^3.8.0"
   },
   "pre-commit": [

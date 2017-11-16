@@ -1,75 +1,58 @@
-#Metronome
+# Metronome tiny client
 
-Install
+Metronome client.
 
-```bash
-npm install --save metronome
+This module provide a shiny metronome contracts object ready to use.
+
+Uses web3 1.x.x.
+
+# Install
+```batch
+$ npm install --save metronomejs
 ```
 
-Usage
+# Usage
+```js
+const metronome = require('metronomejs')
+const mtn = metronome.getInstance(provider)
 
-```javascript
-const metronome = require('metronome')
-const config = require('./mtn.config.json')
+console.log(mtn.mtntoken.options)
 
-const mtn = metronome.createInstance(JSON.parse(config))
-mtn.then(mtn => mtn.minimumPrice())
+// > {
+//     address: '0x1234567890123456789012345678901234567891',
+//     jsonInterface: [...],
+//     from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
+//     gasPrice: '10000000000000',
+//     gas: 1000000
+// }
+
+mtn.mtntoken.options.from(myaddr)
+mtn.mtntoken.options.address(contractAddress)
+
+mtn.mtntoken.name.call().then(name => console.log('The token name is: ' + name) )
+ 
+mtn.mtntoken.symbol.call({from: addr}).then(symbol => console.log('Token symbol: ' + symbol))
+ 
+mtn.mtntoken.totalSupply.call({from: addr}).then(totalSupply => console.log(totalSupply))
+ 
+mtn.mtntoken.balanceOf.call(web3.eth.accounts[0]).then(bal => console.log('balance is ' + bal.toString(10)))
+ 
+const value = '100' // Base 10, accounts for decimals. 
+mtn.mtntoken.transfer(toAddress, value, { from: addr }).then(txHash => console.dir(txHash))
+
 ```
 
-## mtn.config.json
 
-you must provide the addrs of the contracts involved in metronome.
-Next is an example of full config object:
+# Interface
 
+### metronome.getInstance()
+
+Creates a web3 contract mtn.
+
+```js
+const instance = metronome.getInstance(provider)
 ```
-const defaultConfig = {
-  rpc: {
-    host: 'http://localhost:8545'
-    user: 'Bruce Wayne'
-    pass: 'Im not batman'
-  },
-  contracts: {
-    metronome: '0xb7c76bf1dc1032fc588280e5a261ab7d1b2677d6',
-    reservetoken: '0x83ca2cbed33652b6b93a9f4c1a6a93ed6f7de9d4',
-    smartContract: '0xae9f4f03c991558092ad60556cb36b4908bcc806',
-    aux: '0x3381421f6e84c67f4625a511d4a5cbbdafd70c3a',
-    pair: '0x2997ce1b1be5fdb0ab735688466793e13c7ae2a0'
-  }
-}
-``` 
+Parameters
 
-## API
-
- # changeEthToMtn
-
- # changeMtnToEth
-
- # ifChangeEthToMtn
-
- # ifChangeMtnToEth
-
- # founderMintTokens
-
- # founderWithdrawEth
-
- # founderWithdrawTokens
-
- # payable
-
- # whatWouldPurchaseDo
-
- # setRoot
-
- # rootsMatch
-
- # subscribe
-
- # cancelSubscription
-
- # getSubscription
-
- # subWithdraw
-
- # multiSubWithdraw
-
- # minimumPrice
+- `provider`
+A valid web3 provider for 1.0.x versions, see details [here](http://web3js.readthedocs.io/en/1.0/include_package-core.html?highlight=provider)
