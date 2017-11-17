@@ -1,8 +1,8 @@
 const abis = require('./contracts')
-var Web3 = require('web3');
+const Web3 = require('web3');
 
 const getInstance = provider => {
-    var web3 = new Web3(Web3.givenProvider || provider);
+    const web3 = new Web3(Web3.givenProvider || provider);
 
     const res = {
         proceeds: new web3.eth.Contract(abis.Proceeds),
@@ -15,4 +15,4 @@ const getInstance = provider => {
     return Object.assign({}, res, { web3 })
 }
 
-module.export = { getInstance }
+module.exports = { getInstance }
