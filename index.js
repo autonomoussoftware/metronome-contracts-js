@@ -12,7 +12,15 @@ const getInstance = provider => {
         autonomousConverter: new web3.eth.Contract(abis.AutonomousConverter)
     }
 
-    return Object.assign({}, res, { web3 })
+    for (let key in res) {
+        res[key].setProvider(provider)
+    }
+
+    return Object.assign({}, res, {
+        web3
+    })
 }
 
-module.exports = { getInstance }
+module.exports = {
+    getInstance
+}
