@@ -6,6 +6,7 @@ const library = 'metronome'
 const outputFile = isProd ? `${library}.min.js` : `${library}.js`
 
 module.exports = {
+  target: 'web',
   entry: path.resolve(__dirname, './index.js'),
 
   output: {
