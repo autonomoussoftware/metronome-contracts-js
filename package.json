@@ -3,6 +3,7 @@
   "version": "1.1.2",
   "description": "Node & Browser wrappers for Metronome Token",
   "main": "./index.js",
+  "browser": "./dist/metronome.min.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "dev": "webpack --progress --colors --watch",
