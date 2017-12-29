@@ -1,53 +1,51 @@
-# Metronome tiny client
+# metronomejs
 
-Metronome client.
+> 🔌 JavaScript client for [Metronome Token](http://metronome.io)
 
-This module provide a shiny metronome contracts object ready to use.
+This module provides a shiny metronome contracts object (with `web3 1.x.x`) ready to use.
 
-Uses web3 1.x.x.
-
-# Install
+## Install
 ```batch
 $ npm install --save metronomejs
 ```
 
-# Usage
+## Usage
 ```js
 const metronome = require('metronomejs')
 const mtn = metronome.getInstance(provider)
 
 console.log(mtn.mtntoken.options)
 
-// > {
-//     address: '0x1234567890123456789012345678901234567891',
-//     jsonInterface: [...],
-//     from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
-//     gasPrice: '10000000000000',
-//     gas: 1000000
-// }
+/*
+> {
+    address: '0x1234567890123456789012345678901234567891',
+    jsonInterface: [...],
+    from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
+    gasPrice: '10000000000000',
+    gas: 1000000
+}
+*/
 
 mtn.mtntoken.options.from(myaddr)
 mtn.mtntoken.options.address(contractAddress)
 
-mtn.mtntoken.name.call().then(name => console.log('The token name is: ' + name) )
- 
-mtn.mtntoken.symbol.call({from: addr}).then(symbol => console.log('Token symbol: ' + symbol))
- 
-mtn.mtntoken.totalSupply.call({from: addr}).then(totalSupply => console.log(totalSupply))
- 
-mtn.mtntoken.balanceOf.call(web3.eth.accounts[0]).then(bal => console.log('balance is ' + bal.toString(10)))
- 
-const value = '100' // Base 10, accounts for decimals. 
-mtn.mtntoken.transfer(toAddress, value, { from: addr }).then(txHash => console.dir(txHash))
+mtn.mtntoken.name.call().then(name => console.log('Token name: ', name) )
 
+mtn.mtntoken.symbol.call({ from: addr }).then(symbol => console.log('Token symbol: ', symbol))
+
+mtn.mtntoken.totalSupply.call({ from: addr }).then(totalSupply => console.log('Total Supply: ', totalSupply))
+
+mtn.mtntoken.balanceOf.call(web3.eth.accounts[0]).then(bal => console.log('Balance: ', bal.toString(10)))
+
+const value = '100' // Base 10, accounts for decimals.
+mtn.mtntoken.transfer(toAddress, value, { from: addr }).then(txHash => console.dir(txHash))
 ```
 
-
-# Interface
+## Interface
 
 ### metronome.getInstance()
 
-Creates a web3 contract mtn.
+Creates a web3 contract instance for Metronome Token.
 
 ```js
 const instance = metronome.getInstance(provider)
@@ -55,4 +53,4 @@ const instance = metronome.getInstance(provider)
 Parameters
 
 - `provider`
-A valid web3 provider for 1.0.x versions, see details [here](http://web3js.readthedocs.io/en/1.0/include_package-core.html?highlight=provider)
+A valid web3 (`1.0.x`), for more information check documentation [here](http://web3js.readthedocs.io/en/1.0/include_package-core.html?highlight=provider)
