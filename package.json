@@ -28,7 +28,7 @@
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
   "dependencies": {
     "human-standard-token-abi": "^1.0.2",
-    "web3": "^1.0.0-beta.27"
+    "web3": "^1.0.0-beta.29"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
