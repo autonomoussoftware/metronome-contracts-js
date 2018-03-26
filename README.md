@@ -9,7 +9,8 @@
 ## Index
 
 1. [Requirements](#requirements)
-1. [Install](#install)
+1. [Dev Setup](#dev-setup)
+1. [Prod Setup](#prod-setup)
 1. [Usage](#usage)
 1. [Interface](#interface)
 1. [License](#license)
@@ -18,12 +19,35 @@
 - [Node.js](https://nodejs.org/en/) / Web Browsers
 - [Web3](https://github.com/ethereum/web3.js/)
 
-## Install
-```batch
-$ npm install --save metronomejs
+
+##  Dev Setup
+```bash
+# Install dependencies
+$ npm i
+
+# Init webpack in dev mode
+$ npm run dev
+
+# Start demo application
+$ npm run demo
+```
+
+## Prod Setup
+```bash
+# Install dependencies
+$ npm i
+
+# Build for production
+$ npm run build
+
+# Publish to npm registry
+$ npm publish
 ```
 
 ## Usage
+
+Install dependency using npm or yarn: `$ npm i -S metronomejs`
+
 ```js
 const Web3 = require('web3')
 const metronome = require('metronomejs')

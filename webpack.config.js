@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 
 const isProd = process.env.NODE_ENV === 'production'
 const library = 'metronome'
@@ -7,7 +6,7 @@ const outputFile = isProd ? `${library}.min.js` : `${library}.js`
 
 module.exports = {
   target: 'web',
-  entry: path.resolve(__dirname, './index.js'),
+  entry: path.resolve(__dirname, './src/index.js'),
 
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -50,5 +49,5 @@ module.exports = {
     hints: false
   },
 
-  devtool: isProd ? '#eval-source-map' : false,
+  devtool: isProd ? '#eval-source-map' : false
 }

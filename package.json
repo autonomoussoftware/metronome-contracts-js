@@ -9,7 +9,7 @@
     "dev": "webpack --progress --colors --watch",
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint ./src --fix .js",
-    "sample:node": "nodemon examples/node"
+    "demo": "nodemon examples/node"
   },
   "repository": {
     "type": "git",
