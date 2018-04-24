@@ -2,7 +2,7 @@
   <img src="./logo.png" alt="Metronome JS" width="50%">
 </h1>
 
-🔌 JavaScript client for [Metronome Token](http://metronome.io). This module provides a shiny metronome contracts object (using `web3 1.x.x`) ready to use. Compatible with Node.js and Web Browsers.
+� JavaScript client for [Metronome Token](http://metronome.io). This module provides a shiny metronome contracts object (using `web3 1.x.x`) ready to use. Compatible with Node.js and Web Browsers.
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
