@@ -16,4 +16,8 @@ class Metronome {
   }
 }
 
+Metronome.MET_TOKEN_ADDRESS = metTokenAddress
+Metronome.AUCTIONS_ADDRESS = auctionsAddress
+Metronome.AUTONOMOUS_CONVERTER_ADDRESS = autonomousConverterAddress
+
 module.exports = Metronome
