@@ -1,3 +1,5 @@
+'use strict'
+
 const metToken = require('./contracts/METToken')
 const auctions = require('./contracts/Auctions')
 const autonomousConverter = require('./contracts/AutonomousConverter')

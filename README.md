@@ -1,8 +1,8 @@
-# MetronomeJS
+<h1 align="center">
+  <img src="./logo.png" alt="MetronomeJS" width="50%">
+</h1>
 
-> 🔌 JavaScript Contracts for [Metronome Token](http://metronome.io)
-
-This module provides a wrap of [web3]() Metronome contracts objects ready to use.
+🔌 JavaScript Contracts for [Metronome Token](http://metronome.io). This module provides a [web3](https://github.com/ethereum/web3.js) wrap of Metronome contracts ready to use.
 
 ## Install
 ```batch
@@ -27,3 +27,7 @@ console.log(mtn.autonomousConverter.options)
     - `METToken`
     - `Auctions`
     - `AutonomousConverter`
+
+## LICENSE
+
+[MIT License](https://github.com/MetronomeToken/metronome-api/blob/develop/LICENSE).
