@@ -8,10 +8,11 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "dev": "webpack --progress --colors --watch",
-    "lint": "eslint ./src --ext .js",
-    "lint:fix": "eslint ./src --fix .js",
+    "lint": "eslint ./ --ext .js",
+    "lint:fix": "eslint ./ --fix .js",
     "precommit": "npm run lint",
-    "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches"
+    "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,7 @@
     "url": "https://github.com/MetronomeToken/metronomejs/issues"
   },
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
-  "dependencies": {
-    "web3": "^1.0.0-beta.34"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -49,12 +48,31 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
+    "jest": "^22.4.3",
     "npm-check": "^5.7.0",
     "pre-commit": "^1.2.2",
+    "web3": "^1.0.0-beta.34",
     "webpack": "^3.8.0"
   },
   "pre-commit": [
     "lint",
     "test"
-  ]
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "roots": [
+      "test/"
+    ]
+  }
 }

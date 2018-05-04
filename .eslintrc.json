@@ -1,3 +1,9 @@
 {
-  "extends": ["bloq"]
+  "extends": ["bloq"],
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
 }

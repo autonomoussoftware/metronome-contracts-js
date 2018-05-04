@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -49,5 +51,5 @@ module.exports = {
     hints: false
   },
 
-  devtool: isProd ? '#eval-source-map' : false,
+  devtool: isProd ? '#eval-source-map' : false
 }
