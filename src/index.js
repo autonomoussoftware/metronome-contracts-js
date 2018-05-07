@@ -2,21 +2,22 @@
 
 const addresses = require('./addresses')
 
-const metToken = require('./contracts/METToken')
-const auctions = require('./contracts/Auctions')
-const autonomousConverter = require('./contracts/AutonomousConverter')
+const metTokenAbi = require('./abis/METToken')
+const auctionsAbi = require('./abis/Auctions')
+const autonomousConverterAbi = require('./abis/AutonomousConverter')
 
 class Metronome {
-  constructor (web3, { chain = 'main' } = {}) {
+  constructor (web3, chain = 'main') {
     if (!addresses[chain]) {
       throw new Error(`Invalid 'chain' parameter`)
     }
 
-    return {
-      metToken: new web3.eth.Contract(metToken.abi, addresses[chain].metToken),
-      auctions: new web3.eth.Contract(auctions.abi, addresses[chain].auctions),
-      autonomousConverter: new web3.eth.Contract(autonomousConverter.abi, addresses[chain].autonomousConverter)
-    }
+    this.chain = chain
+    this.addresses = addresses[chain]
+
+    this.metToken = new web3.eth.Contract(metTokenAbi, addresses[chain].metToken)
+    this.auctions = new web3.eth.Contract(auctionsAbi, addresses[chain].auctions)
+    this.autonomousConverter = new web3.eth.Contract(autonomousConverterAbi, addresses[chain].autonomousConverter)
   }
 }
 

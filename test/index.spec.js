@@ -10,7 +10,10 @@ const chain = 'ropsten'
 
 describe('MetronomeJS', function () {
   test('initializes metronome instance and get all the contracts defined', function () {
-    const metronome = new Metronome(web3, { chain })
+    const metronome = new Metronome(web3, chain)
+
+    expect(metronome.chain).toBe(chain)
+    expect(metronome.addresses).toEqual(addresses[chain])
 
     expect(metronome.metToken).toBeDefined()
     expect(metronome.auctions).toBeDefined()
@@ -18,7 +21,7 @@ describe('MetronomeJS', function () {
   })
 
   test('initializes metronome instance and get the contracts with the correct addresses', function () {
-    const metronome = new Metronome(web3, { chain })
+    const metronome = new Metronome(web3, chain)
 
     expect(metronome.metToken.options.address.toLowerCase()).toBe(addresses[chain].metToken)
     expect(metronome.auctions.options.address.toLowerCase()).toBe(addresses[chain].auctions)
@@ -35,14 +38,14 @@ describe('MetronomeJS', function () {
 
   test('initializes metronome instance with an invalid chain and throws error', function () {
     try {
-      new Metronome(web3, { chain: 'test' }) // eslint-disable-line no-new
+      new Metronome(web3, 'test') // eslint-disable-line no-new
     } catch (err) {
       expect(err.message).toBe(`Invalid 'chain' parameter`)
     }
   })
 
   test('initializes metronome instance and get valid contract methods', function () {
-    const metronome = new Metronome(web3, { chain })
+    const metronome = new Metronome(web3, chain)
 
     expect(typeof metronome.metToken.methods.transfer).toBe('function')
     expect(typeof metronome.auctions.methods.heartbeat).toBe('function')
