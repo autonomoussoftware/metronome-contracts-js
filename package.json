@@ -1,18 +1,27 @@
 {
-  "name": "metronomejs",
-  "version": "1.1.5",
-  "description": "Node & Browser wrappers for Metronome Token",
+  "name": "metronome-contracts",
+  "version": "1.0.0",
+  "description": "Web3 Contracts for Metronome Token",
   "author": "Ignacio Anaya <ignaciol@bloq.com>",
   "main": "./src/index.js",
   "browser": "./dist/metronome.min.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
-    "dev": "webpack --progress --colors --watch",
-    "lint": "eslint ./src --ext .js",
-    "lint:fix": "eslint ./src --fix .js",
+    "build": "npm run build:dev && npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress --colors -p",
+    "build:dev": "webpack --progress --colors",
+    "check": "dependency-check . && dependency-check . --unused --no-dev",
+    "check:outdated": "npm-check -i eslint-config* -i husky",
+    "lint": "eslint ./ --ext .js",
+    "lint:fix": "eslint ./ --fix .js",
     "precommit": "npm run lint",
-    "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches"
+    "prepush": "npm test",
+    "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches",
+    "test": "jest"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MetronomeToken/metronomejs.git"
@@ -28,33 +37,49 @@
     "url": "https://github.com/MetronomeToken/metronomejs/issues"
   },
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
-  "dependencies": {
-    "web3": "^1.0.0-beta.34"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "check-tag-matches": "^1.0.0",
-    "cross-env": "^5.1.0",
+    "cross-env": "^5.1.6",
+    "dependency-check": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-config-bloq": "^1.2.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsdoc": "^3.6.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsdoc": "^3.7.0",
     "eslint-plugin-mocha": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prefer-arrow": "^1.1.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^3.1.0",
     "husky": "^0.14.3",
-    "npm-check": "^5.7.0",
-    "pre-commit": "^1.2.2",
-    "webpack": "^3.8.0"
+    "jest": "^22.4.4",
+    "npm-check": "^5.7.1",
+    "web3": "^1.0.0-beta.34",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ]
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "roots": [
+      "test/"
+    ]
+  },
+  "preferGlobal": false,
+  "private": false
 }

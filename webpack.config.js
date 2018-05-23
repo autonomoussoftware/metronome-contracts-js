@@ -1,12 +1,16 @@
+'use strict'
+
 const path = require('path')
 
 const isProd = process.env.NODE_ENV === 'production'
-const library = 'metronome'
+const library = 'metronome-contracts'
 const outputFile = isProd ? `${library}.min.js` : `${library}.js`
 
 module.exports = {
   target: 'web',
   entry: path.resolve(__dirname, './src/index.js'),
+
+  mode: isProd ? 'production' : 'development',
 
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -32,12 +36,6 @@ module.exports = {
         include: [path.resolve(__dirname, './src')]
       }
     ]
-  },
-
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
   },
 
   devServer: {
