@@ -6,7 +6,7 @@ const metTokenAbi = require('./abis/METToken')
 const auctionsAbi = require('./abis/Auctions')
 const autonomousConverterAbi = require('./abis/AutonomousConverter')
 
-class Metronome {
+class MetronomeContracts {
   constructor (web3, chain = 'main') {
     if (!addresses[chain]) {
       throw new Error(`Invalid 'chain' parameter`)
@@ -21,6 +21,6 @@ class Metronome {
   }
 }
 
-Metronome.addresses = addresses
+MetronomeContracts.addresses = addresses
 
-module.exports = Metronome
+module.exports = MetronomeContracts

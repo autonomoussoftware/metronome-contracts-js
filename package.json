@@ -6,8 +6,9 @@
   "main": "./src/index.js",
   "browser": "./dist/metronome.min.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --colors -p",
-    "dev": "webpack --progress --colors --watch",
+    "build": "npm run build:dev && npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress --colors -p",
+    "build:dev": "webpack --progress --colors",
     "lint": "eslint ./ --ext .js",
     "lint:fix": "eslint ./ --fix .js",
     "prepush": "npm test",
