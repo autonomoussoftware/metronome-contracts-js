@@ -10,6 +10,8 @@ module.exports = {
   target: 'web',
   entry: path.resolve(__dirname, './src/index.js'),
 
+  mode: isProd ? 'production' : 'development',
+
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',

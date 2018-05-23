@@ -4,6 +4,8 @@
 
 🔌  [Web3](https://github.com/ethereum/web3.js) Contracts for [Metronome Token](http://metronome.io) ready to be used.
 
+[![Code Style](https://img.shields.io/badge/code%20style-bloq-0063a6.svg)](https://github.com/bloq/eslint-config-bloq)
+
 ## Install
 ```batch
 $ npm i -S metronome-contracts

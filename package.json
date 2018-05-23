@@ -9,13 +9,19 @@
     "build": "npm run build:dev && npm run build:prod",
     "build:prod": "cross-env NODE_ENV=production webpack --progress --colors -p",
     "build:dev": "webpack --progress --colors",
+    "check": "dependency-check . && dependency-check . --unused --no-dev",
+    "check:outdated": "npm-check -i eslint-config* -i husky",
     "lint": "eslint ./ --ext .js",
     "lint:fix": "eslint ./ --fix .js",
-    "prepush": "npm test",
     "precommit": "npm run lint",
+    "prepush": "npm test",
     "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches",
     "test": "jest"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MetronomeToken/metronomejs.git"
@@ -33,27 +39,29 @@
   "homepage": "https://github.com/MetronomeToken/metronomejs#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "check-tag-matches": "^1.0.0",
-    "cross-env": "^5.1.0",
+    "cross-env": "^5.1.6",
+    "dependency-check": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-config-bloq": "^1.2.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsdoc": "^3.6.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsdoc": "^3.7.0",
     "eslint-plugin-mocha": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prefer-arrow": "^1.1.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^3.1.0",
     "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "npm-check": "^5.7.0",
+    "jest": "^22.4.4",
+    "npm-check": "^5.7.1",
     "web3": "^1.0.0-beta.34",
-    "webpack": "^3.8.0"
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   },
   "jest": {
     "collectCoverage": true,
@@ -71,5 +79,7 @@
     "roots": [
       "test/"
     ]
-  }
+  },
+  "preferGlobal": false,
+  "private": false
 }
