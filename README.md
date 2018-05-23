@@ -19,9 +19,9 @@ const Metronome = require('metronome-contracts')
 const web3 = new Web3('ws://localhost:8545')
 const metronome = new Metronome(web3)
 
-console.log(mtn.metToken.options)
-console.log(mtn.auctions.options)
-console.log(mtn.autonomousConverter.options)
+console.log(metronome.metToken.options)
+console.log(metronome.auctions.options)
+console.log(metronome.autonomousConverter.options)
 ```
 
 ## Contracts API
