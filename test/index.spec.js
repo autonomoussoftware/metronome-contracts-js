@@ -8,7 +8,7 @@ const web3 = new Web3()
 
 const chain = 'ropsten'
 
-describe('MetronomeJS', function () {
+describe('metronome-contracts', function () {
   test('initializes metronome instance and get all the contracts defined', function () {
     const metronome = new Metronome(web3, chain)
 

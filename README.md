@@ -1,18 +1,18 @@
 <h1 align="center">
-  <img src="./logo.png" alt="MetronomeJS" width="50%">
+  <img src="./logo.png" alt="Metronome Contracts JS" width="50%">
 </h1>
 
-🔌 JavaScript Contracts for [Metronome Token](http://metronome.io). This module provides a [web3](https://github.com/ethereum/web3.js) wrap of Metronome contracts ready to use.
+🔌  [Web3](https://github.com/ethereum/web3.js) Contracts for [Metronome Token](http://metronome.io) ready to be used.
 
 ## Install
 ```batch
-$ npm i -S metronomejs
+$ npm i -S metronome-contracts
 ```
 
 ## Usage
 ```js
 const Web3 = require('web3')
-const Metronome = require('metronomejs')
+const Metronome = require('metronome-contracts')
 
 const web3 = new Web3('ws://localhost:8545')
 const metronome = new Metronome(web3)
@@ -22,12 +22,10 @@ console.log(mtn.auctions.options)
 console.log(mtn.autonomousConverter.options)
 ```
 
-## Contracts
-
-    - `METToken`
-    - `Auctions`
-    - `AutonomousConverter`
+## Contracts API
+  - [`metToken`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#token-api)
+  - [`auctions`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#auction-api)
+  - [`autonomousConverter`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#autonomous-converter-contract-api)
 
 ## LICENSE
-
 [MIT License](https://github.com/MetronomeToken/metronome-api/blob/develop/LICENSE).

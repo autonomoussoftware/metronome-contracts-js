@@ -1,7 +1,7 @@
 {
-  "name": "metronomejs",
-  "version": "1.1.5",
-  "description": "Node & Browser wrappers for Metronome Token",
+  "name": "metronome-contracts",
+  "version": "1.0.0",
+  "description": "Web3 Contracts for Metronome Token",
   "author": "Ignacio Anaya <ignaciol@bloq.com>",
   "main": "./src/index.js",
   "browser": "./dist/metronome.min.js",
