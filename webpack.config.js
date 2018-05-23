@@ -3,7 +3,7 @@
 const path = require('path')
 
 const isProd = process.env.NODE_ENV === 'production'
-const library = 'metronome'
+const library = 'metronome-contracts'
 const outputFile = isProd ? `${library}.min.js` : `${library}.js`
 
 module.exports = {

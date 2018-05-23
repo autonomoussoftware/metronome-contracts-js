@@ -1,10 +1,10 @@
 'use strict'
 
-const addresses = require('./addresses')
+const addresses = require('@/addresses')
 
-const metTokenAbi = require('./abis/METToken')
-const auctionsAbi = require('./abis/Auctions')
-const autonomousConverterAbi = require('./abis/AutonomousConverter')
+const metTokenAbi = require('@/abis/METToken')
+const auctionsAbi = require('@/abis/Auctions')
+const autonomousConverterAbi = require('@/abis/AutonomousConverter')
 
 class Metronome {
   constructor (web3, chain = 'main') {
