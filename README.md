@@ -48,4 +48,4 @@ This is a convenience object containing the addresses of the contracts for each 
 
 ## License
 
-MIT
+[MIT](https://github.com/autonomoussoftware/metronome-contracts-js/blob/master/LICENSE)
