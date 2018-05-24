@@ -4,7 +4,9 @@
 
 🔌  [Web3](https://github.com/ethereum/web3.js) Contracts for [Metronome Token](http://metronome.io) ready to be used.
 
+[![Build Status](https://travis-ci.org/autonomoussoftware/metronome-contracts-js.svg?branch=master)](https://travis-ci.org/autonomoussoftware/metronome-contracts-js)
 [![Code Style](https://img.shields.io/badge/code%20style-bloq-0063a6.svg)](https://github.com/bloq/eslint-config-bloq)
+[![Known Vulnerabilities](https://snyk.io/test/github/autonomoussoftware/metronome-contracts-js:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/autonomoussoftware/metronome-contracts-js:package.json?targetFile=package.json)
 
 ## Install
 
