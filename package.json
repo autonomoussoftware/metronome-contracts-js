@@ -31,7 +31,7 @@
     "lint": "eslint --cache .",
     "precommit": "npm run lint",
     "prepublishOnly": "npm run build && npm run precommit && npm run prepush && tag-matches",
-    "prepush": "npm run check && npm run coverage",
+    "prepush": "npm run check",
     "test": "jest"
   },
   "devDependencies": {
