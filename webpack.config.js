@@ -38,11 +38,6 @@ module.exports = {
     ]
   },
 
-  devServer: {
-    historyApiFallback: true,
-    noInfo: false
-  },
-
   performance: {
     hints: false
   },
