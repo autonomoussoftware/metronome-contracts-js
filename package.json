@@ -61,7 +61,7 @@
   },
   "preferGlobal": false,
   "private": false,
-  "browser": "./dist/metronome.min.js",
+  "browser": "./dist/metronome-contracts.min.js",
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
