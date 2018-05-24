@@ -1,8 +1,9 @@
-sudo: required
 dist: trusty
-os: linux
+sudo: false
+
 language: node_js
 node_js:
+  - "6"
   - "8"
 
 cache:
@@ -10,4 +11,5 @@ cache:
     - "node_modules"
 
 script:
+  - npm test
   - npm run build
