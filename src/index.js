@@ -6,8 +6,16 @@ const metTokenAbi = require('./abis/METToken')
 const auctionsAbi = require('./abis/Auctions')
 const autonomousConverterAbi = require('./abis/AutonomousConverter')
 
+const createContract = (web3, abi, address) =>
+  typeof web3.eth.Contract === 'function'
+    ? new web3.eth.Contract(abi, address)
+    : web3.eth.contract(abi).at(address)
+
 class MetronomeContracts {
-  constructor (web3, chain = 'main') {
+  constructor (web3, chain = 'mainnet') {
+    if (!web3 || !web3.eth) {
+      throw new Error('Invalid web3 instance or not supplied')
+    }
     if (!addresses[chain]) {
       throw new Error(`Invalid 'chain' parameter`)
     }
@@ -15,9 +23,13 @@ class MetronomeContracts {
     this.chain = chain
     this.addresses = addresses[chain]
 
-    this.metToken = new web3.eth.Contract(metTokenAbi, addresses[chain].metToken)
-    this.auctions = new web3.eth.Contract(auctionsAbi, addresses[chain].auctions)
-    this.autonomousConverter = new web3.eth.Contract(autonomousConverterAbi, addresses[chain].autonomousConverter)
+    this.metToken = createContract(web3, metTokenAbi, addresses[chain].metToken)
+    this.auctions = createContract(web3, auctionsAbi, addresses[chain].auctions)
+    this.autonomousConverter = createContract(
+      web3,
+      autonomousConverterAbi,
+      addresses[chain].autonomousConverter
+    )
   }
 }
 

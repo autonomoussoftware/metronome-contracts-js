@@ -7,7 +7,7 @@ const Web3 = require('web3')
 const web3 = new Web3()
 
 const ROPSTEN = 'ropsten'
-const MAIN = 'main'
+const MAIN = 'mainnet'
 
 describe('metronome-contracts', function () {
   test('initializes metronome instance and get all the contracts defined', function () {
