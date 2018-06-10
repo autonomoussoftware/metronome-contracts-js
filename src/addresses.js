@@ -13,6 +13,8 @@ const ropsten = {
 }
 
 const addresses = {
+  1: mainnet,
+  3: ropsten,
   main: mainnet,
   mainnet,
   ropsten

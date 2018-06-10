@@ -33,6 +33,7 @@ console.log(metronomeContracts.autonomousConverter.options)
 ### `MetronomeContracts(web3, network)`
 
 Constructor for the Metronome contracts object. It shall receive a `web3` instance and an optional `network` parameter that default to `'mainnet'`. Other supported networks are: `'ropsten'`.
+Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
 
