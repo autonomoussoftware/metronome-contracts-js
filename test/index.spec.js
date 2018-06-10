@@ -21,7 +21,7 @@ describe('metronome-contracts', function () {
     expect(metronome.autonomousConverter).toBeDefined()
   })
 
-  test('initializes metronome instance and get the contracts with the correct addresses for ropsten net', function () {
+  test('initializes metronome instance and get the contracts with the correct addresses for ropsten chain', function () {
     const metronome = new MetronomeContracts(web3, ROPSTEN)
 
     expect(metronome.metToken.options.address.toLowerCase()).toBe(addresses[ROPSTEN].metToken.toLowerCase())
@@ -29,7 +29,7 @@ describe('metronome-contracts', function () {
     expect(metronome.autonomousConverter.options.address.toLowerCase()).toBe(addresses[ROPSTEN].autonomousConverter.toLowerCase())
   })
 
-  test('initializes metronome instance and get the contracts with the correct addresses for main net', function () {
+  test('initializes metronome instance and get the contracts with the correct addresses for mainnet chain', function () {
     const metronome = new MetronomeContracts(web3)
 
     expect(metronome.metToken.options.address.toLowerCase()).toBe(addresses[MAIN].metToken.toLowerCase())

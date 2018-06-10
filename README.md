@@ -30,18 +30,21 @@ console.log(metronomeContracts.autonomousConverter.options)
 
 ## API
 
-### `MetronomeContracts(web3, network)`
+### `MetronomeContracts(web3, chain)`
 
-Constructor for the Metronome contracts object. It shall receive a `web3` instance and an optional `network` parameter that default to `'mainnet'`. Other supported networks are: `'ropsten'`.
+Constructor for the Metronome contracts object.
+It shall receive a `web3` instance and an optional `chain` parameter that default to `'mainnet'`.
+Other supported chains are: `'ropsten'`.
 Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
 
-The instance of the Metronome contracts will have a property for each contract: `metToken`, `auctions`, `autonomousConverter`. Each contract is an instance of `web3.eth.Contract`.
+The instance of the Metronome contracts will have a property for each contract: `metToken`, `auctions`, `autonomousConverter`.
+Each contract is an instance of `web3.eth.Contract`.
 
 ### `MetronomeContracts.addresses`
 
-This is a convenience object containing the addresses of the contracts for each supported network i.e. `mainnet` and `ropsten`.
+This is a convenience object containing the addresses of the contracts for each supported chain i.e. `mainnet` and `ropsten`.
 
 ## Contracts API
 
