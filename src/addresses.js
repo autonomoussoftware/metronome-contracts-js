@@ -7,9 +7,9 @@ const mainnet = {
 }
 
 const ropsten = {
-  auctions: '0x0f8fcefeb1067346877a7eb340b0f4340e3e3854',
-  autonomousConverter: '0xdcf29d1e78a4c91880c4869cfe38dacbacccd5fd',
-  metToken: '0xcb1a9533a26c13c14e21c2958ed94900c62a929c'
+  auctions: '0x767182c6ef62398993099e5542ab43c2456a8aba',
+  autonomousConverter: '0x638e84db864aa345266e1aee13873b860afe82e7',
+  metToken: '0xf3e9a687fdf24112745d4d7dee150ba87a07ecc3'
 }
 
 const addresses = {
