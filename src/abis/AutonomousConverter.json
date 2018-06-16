@@ -3,52 +3,7 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "name": "_mintReturn",
-        "type": "uint256"
-      }
-    ],
-    "name": "convertMetToEth",
-    "outputs": [
-      {
-        "name": "returnedEth",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_reserveToken",
-        "type": "address"
-      },
-      {
-        "name": "_smartToken",
-        "type": "address"
-      },
-      {
-        "name": "_auctions",
-        "type": "address"
-      }
-    ],
-    "name": "init",
-    "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "newOwner",
+        "name": "_newOwner",
         "type": "address"
       }
     ],
@@ -64,69 +19,17 @@
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [],
-    "name": "getMetBalance",
+    "name": "acceptOwnership",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
     "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_depositAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "getEthForMetResult",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_depositAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "getMetForEthResult",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getEthBalance",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -158,28 +61,23 @@
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_mintReturn",
-        "type": "uint256"
-      }
-    ],
-    "name": "convertEthToMet",
+    "constant": true,
+    "inputs": [],
+    "name": "smartToken",
     "outputs": [
       {
-        "name": "returnedMet",
-        "type": "uint256"
+        "name": "",
+        "type": "address"
       }
     ],
-    "payable": true,
-    "stateMutability": "payable",
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": true,
     "inputs": [],
-    "name": "smartToken",
+    "name": "newOwner",
     "outputs": [
       {
         "name": "",
@@ -203,11 +101,6 @@
     "payable": false,
     "stateMutability": "view",
     "type": "function"
-  },
-  {
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "fallback"
   },
   {
     "anonymous": false,
@@ -286,5 +179,144 @@
     ],
     "name": "OwnershipChanged",
     "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_reserveToken",
+        "type": "address"
+      },
+      {
+        "name": "_smartToken",
+        "type": "address"
+      },
+      {
+        "name": "_auctions",
+        "type": "address"
+      }
+    ],
+    "name": "init",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "handleFund",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getMetBalance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getEthBalance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_depositAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMetForEthResult",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_depositAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "getEthForMetResult",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_mintReturn",
+        "type": "uint256"
+      }
+    ],
+    "name": "convertEthToMet",
+    "outputs": [
+      {
+        "name": "returnedMet",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "name": "_mintReturn",
+        "type": "uint256"
+      }
+    ],
+    "name": "convertMetToEth",
+    "outputs": [
+      {
+        "name": "returnedEth",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ]
