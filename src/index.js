@@ -17,7 +17,7 @@ class MetronomeContracts {
       throw new Error('Invalid web3 instance or not supplied')
     }
     if (!addresses[chain]) {
-      throw new Error(`Invalid 'chain' parameter`)
+      throw new Error('Invalid \'chain\' parameter')
     }
 
     this.chain = chain

@@ -49,7 +49,7 @@ describe('metronome-contracts', function () {
     try {
       new MetronomeContracts(web3, 'fakenet') // eslint-disable-line no-new
     } catch (err) {
-      expect(err.message).toBe(`Invalid 'chain' parameter`)
+      expect(err.message).toBe('Invalid \'chain\' parameter')
     }
   })
 
