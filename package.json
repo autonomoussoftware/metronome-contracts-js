@@ -14,7 +14,7 @@
     "url": "https://github.com/autonomoussoftware/metronome-contracts-js/issues"
   },
   "license": "MIT",
-  "author": "Ignacio Anaya <ignaciol@bloq.com>",
+  "author": "Ignacio Anaya <ignacio@bloq.com>",
   "files": [
     "dist",
     "src"
