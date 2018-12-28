@@ -2,10 +2,6 @@
 
 const addresses = require('./addresses')
 
-const metTokenAbi = require('./abis/METToken')
-const auctionsAbi = require('./abis/Auctions')
-const autonomousConverterAbi = require('./abis/AutonomousConverter')
-
 const createContract = (web3, abi, address) =>
   typeof web3.eth.Contract === 'function'
     ? new web3.eth.Contract(abi, address)
@@ -17,18 +13,22 @@ class MetronomeContracts {
       throw new Error('Invalid web3 instance or not supplied')
     }
     if (!addresses[chain]) {
-      throw new Error('Invalid \'chain\' parameter')
+      throw new Error('Invalid "chain" parameter')
     }
 
     this.chain = chain
     this.addresses = addresses[chain]
 
-    this.metToken = createContract(web3, metTokenAbi, addresses[chain].metToken)
-    this.auctions = createContract(web3, auctionsAbi, addresses[chain].auctions)
-    this.autonomousConverter = createContract(
-      web3,
-      autonomousConverterAbi,
-      addresses[chain].autonomousConverter
+    const contracts = {
+      auctions: require('./abis/Auctions'),
+      autonomousConverter: require('./abis/AutonomousConverter'),
+      metToken: require('./abis/METToken'),
+      tokenPorter: require('./abis/TokenPorter'),
+      validator: require('./abis/Validator')
+    }
+    // eslint-disable-next-line no-return-assign
+    Object.keys(contracts).forEach(name =>
+      this[name] = createContract(web3, contracts[name], addresses[chain][name])
     )
   }
 }
