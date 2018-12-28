@@ -11,7 +11,7 @@
 ## Install
 
 ```batch
-npm i -S metronome-contracts
+npm install --save metronome-contracts
 ```
 
 ## Usage
@@ -23,9 +23,8 @@ const MetronomeContracts = require('metronome-contracts')
 const web3 = new Web3('ws://localhost:8545')
 const metronomeContracts = new MetronomeContracts(web3, 'mainnet')
 
-console.log(metronomeContracts.metToken.options)
-console.log(metronomeContracts.auctions.options)
-console.log(metronomeContracts.autonomousConverter.options)
+metronomeContracts.metToken.methods.balanceOf(address)
+  .then(console.log)
 ```
 
 ## API
@@ -39,7 +38,7 @@ Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
 
-The instance of the Metronome contracts will have a property for each contract: `metToken`, `auctions`, `autonomousConverter`.
+The instance of the Metronome contracts will have a property for each contract: `auctions`, `autonomousConverter`, `metToken`, `tokenPorter` and `validator`.
 Each contract is an instance of `web3.eth.Contract`.
 
 ### `MetronomeContracts.addresses`
@@ -48,9 +47,11 @@ This is a convenience object containing the addresses of the contracts for each 
 
 ## Contracts API
 
-  - [`METToken`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#token-api)
   - [`Auctions`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#auction-api)
   - [`Autonomous Converter`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#autonomous-converter-contract-api)
+  - [`METToken`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#token-api)
+  - [`TokenPorter`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#tokenporter-api)
+  - [`Validator`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#validator-api)
 
 ## License
 
