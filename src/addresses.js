@@ -14,8 +14,8 @@ const ropsten = {
   auctions: '0x767182C6ef62398993099e5542Ab43c2456A8abA',
   autonomousConverter: '0x638E84db864AA345266e1AEE13873b860aFe82e7',
   metToken: '0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3',
-  tokenPorter: '0x19E29d101eC989bbED7BDe22e5A54434A2b46139',
-  validator: '0x96B30f499BE315F00Afc56176082e98215717EF5'
+  tokenPorter: '0x86a6e9cbf616f157e33f4b95fa686eb3e0d80b50',
+  validator: '0x73924d3c6dbabf47fffa2d9f9303dc2049aec44a'
 }
 
 const addresses = {
