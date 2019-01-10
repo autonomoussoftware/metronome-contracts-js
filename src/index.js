@@ -1,6 +1,9 @@
 'use strict'
 
-const addresses = require('./addresses')
+const mapValues = require('../lib/map-values')
+
+const aliases = require('./aliases.json')
+const allContracts = require('./contracts.json')
 
 const createContract = (web3, abi, address) =>
   typeof web3.eth.Contract === 'function'
@@ -8,31 +11,35 @@ const createContract = (web3, abi, address) =>
     : web3.eth.contract(abi).at(address)
 
 class MetronomeContracts {
-  constructor (web3, chain = 'mainnet') {
+  constructor (web3, _chain = 'mainnet') {
     if (!web3 || !web3.eth) {
       throw new Error('Invalid web3 instance or not supplied')
     }
-    if (!addresses[chain]) {
-      throw new Error('Invalid "chain" parameter')
+
+    const chain = aliases[_chain]
+
+    if (!allContracts[chain]) {
+      throw new Error('Unknown "chain" parameter')
     }
 
     this.chain = chain
-    this.addresses = addresses[chain]
-
-    const contracts = {
-      auctions: require('./abis/Auctions'),
-      autonomousConverter: require('./abis/AutonomousConverter'),
-      metToken: require('./abis/METToken'),
-      tokenPorter: require('./abis/TokenPorter'),
-      validator: require('./abis/Validator')
-    }
-    // eslint-disable-next-line no-return-assign
-    Object.keys(contracts).forEach(name =>
-      this[name] = createContract(web3, contracts[name], addresses[chain][name])
+    this.addresses = mapValues(allContracts[chain], contract =>
+      contract.address
     )
+
+    const contracts = allContracts[chain]
+    Object.assign(this, mapValues(contracts, (contract, name) =>
+      createContract(
+        web3,
+        require(`./abis/${contract.version}/${name}.json`),
+        contract.address
+      )
+    ))
   }
 }
 
-MetronomeContracts.addresses = addresses
+MetronomeContracts.addresses = mapValues(allContracts, contracts =>
+  mapValues(contracts, contract => contract.address)
+)
 
 module.exports = MetronomeContracts

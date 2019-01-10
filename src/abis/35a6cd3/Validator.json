@@ -19,6 +19,20 @@
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [],
+    "name": "metToken",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
     "inputs": [
       {
@@ -63,7 +77,7 @@
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "uint8"
       }
     ],
     "payable": false,
@@ -115,20 +129,6 @@
     ],
     "payable": false,
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "auctions",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -187,25 +187,6 @@
     "inputs": [
       {
         "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "attestationCount",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
         "type": "address"
       }
     ],
@@ -221,26 +202,17 @@
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "token",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
         "name": "hash",
         "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "name": "who",
+        "type": "address"
       },
       {
         "indexed": false,
@@ -272,59 +244,20 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_validator",
+        "name": "_validator1",
+        "type": "address"
+      },
+      {
+        "name": "_validator2",
+        "type": "address"
+      },
+      {
+        "name": "_validator3",
         "type": "address"
       }
     ],
-    "name": "addValidator",
+    "name": "initValidator",
     "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_validator",
-        "type": "address"
-      }
-    ],
-    "name": "removeValidator",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getValidatorsCount",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_threshold",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateThreshold",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -352,19 +285,11 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_tokenAddr",
-        "type": "address"
-      },
-      {
-        "name": "_auctionsAddr",
-        "type": "address"
-      },
-      {
-        "name": "_tokenPorterAddr",
-        "type": "address"
+        "name": "hash",
+        "type": "bytes32"
       }
     ],
-    "name": "initValidator",
+    "name": "validateHash",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -374,61 +299,11 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_burnHash",
+        "name": "hash",
         "type": "bytes32"
-      },
-      {
-        "name": "_originChain",
-        "type": "bytes8"
-      },
-      {
-        "name": "_recipientAddr",
-        "type": "address"
-      },
-      {
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "name": "_fee",
-        "type": "uint256"
-      },
-      {
-        "name": "_proof",
-        "type": "bytes32[]"
-      },
-      {
-        "name": "_extraData",
-        "type": "bytes"
-      },
-      {
-        "name": "_signature",
-        "type": "bytes"
-      },
-      {
-        "name": "_globalSupplyInOtherChains",
-        "type": "uint256"
       }
     ],
-    "name": "attestHash",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_burnHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_signature",
-        "type": "bytes"
-      }
-    ],
-    "name": "refuteHash",
+    "name": "invalidateHash",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -438,23 +313,80 @@
     "constant": true,
     "inputs": [
       {
-        "name": "_message",
+        "name": "hash",
         "type": "bytes32"
-      },
-      {
-        "name": "_signature",
-        "type": "bytes"
       }
     ],
-    "name": "fetchSignerAddress",
+    "name": "hashClaimable",
     "outputs": [
       {
         "name": "",
-        "type": "address"
+        "type": "bool"
       }
     ],
     "payable": false,
-    "stateMutability": "pure",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "hash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "claimHash",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_originChain",
+        "type": "bytes8"
+      },
+      {
+        "name": "_destinationChain",
+        "type": "bytes8"
+      },
+      {
+        "name": "_addresses",
+        "type": "address[]"
+      },
+      {
+        "name": "_extraData",
+        "type": "bytes"
+      },
+      {
+        "name": "_burnHashes",
+        "type": "bytes32[]"
+      },
+      {
+        "name": "_supplyOnAllChain",
+        "type": "uint256[]"
+      },
+      {
+        "name": "_importData",
+        "type": "uint256[]"
+      },
+      {
+        "name": "_proof",
+        "type": "bytes"
+      }
+    ],
+    "name": "isReceiptClaimable",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   }
 ]

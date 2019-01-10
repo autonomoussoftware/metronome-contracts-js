@@ -670,7 +670,7 @@
     "constant": true,
     "inputs": [
       {
-        "name": "t",
+        "name": "_tick",
         "type": "uint256"
       }
     ],
@@ -1023,6 +1023,20 @@
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "restartAuction",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
