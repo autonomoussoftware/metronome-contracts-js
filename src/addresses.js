@@ -1,5 +1,7 @@
 'use strict'
 
+const chains = require('./chains')
+
 const mainnet = {
   // autonomoussoftware/metronome#35a6cd3
   auctions: '0x9d9BcDd249E439AAaB545F59a33812E39A8e3072',
@@ -7,6 +9,15 @@ const mainnet = {
   metToken: '0xa3d58c4E56fedCae3a7c43A725aeE9A71F0ece4e',
   tokenPorter: '0xd75a3e27ce57bb7738d3b0c47b88f76f423eb056',
   validator: '0xa5474b3ee0f86f75528b525c37440d61665f93c4'
+}
+
+const morden = {
+  // internal/metronome#368d83c
+  auctions: '0xb7f717948ce7b91e234de93f6edaba8d314b8685',
+  autonomousConverter: '0x60942c9d3775c4d71ac595f92fab1e0cd1182020',
+  metToken: '0x9b9fb9bbcf19b046d02cd6b49207ad2466ec7a6d',
+  tokenPorter: '0x75f8c2e7cee21c2de8d5105ed68ece297425c1d3',
+  validator: '0x874167a53c019279cbec02fa23cde867db2ae32a'
 }
 
 const ropsten = {
@@ -19,24 +30,15 @@ const ropsten = {
   validator: '0x73924d3c6dbabf47fffa2d9f9303dc2049aec44a'
 }
 
-const morden = {
-  // internal/metronome#bee672b (TBC)
-  auctions: '0xb7f717948ce7b91e234de93f6edaba8d314b8685',
-  autonomousConverter: '0x60942c9d3775c4d71ac595f92fab1e0cd1182020',
-  metToken: '0x9b9fb9bbcf19b046d02cd6b49207ad2466ec7a6d',
-  tokenPorter: '0x75f8c2e7cee21c2de8d5105ed68ece297425c1d3',
-  validator: '0x874167a53c019279cbec02fa23cde867db2ae32a'
-}
-
 const addresses = {
-  1: mainnet,
-  2: morden,
-  3: ropsten,
-  62: morden,
-  main: mainnet,
   mainnet,
-  ropsten,
-  morden
+  morden,
+  ropsten
 }
 
-module.exports = addresses
+const allAddresses = Object.keys(chains).reduce(function (all, id) {
+  all[id] = addresses[chains[id]]
+  return all
+}, {})
+
+module.exports = allAddresses
