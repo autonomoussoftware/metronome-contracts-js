@@ -17,6 +17,7 @@
   "author": "Ignacio Anaya <ignacio@bloq.com>",
   "files": [
     "dist",
+    "lib",
     "src"
   ],
   "main": "./src/index.js",
