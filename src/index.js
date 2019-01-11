@@ -3,7 +3,14 @@
 const mapValues = require('../lib/map-values')
 
 const aliases = require('./aliases.json')
-const allContracts = require('./contracts.json')
+const contractsDefinition = require('./contracts.json')
+
+const allContracts = mapValues(aliases, alias =>
+  mapValues(contractsDefinition[alias], ({ address, version }, name) => ({
+    abi: require(`./abis/${version}/${name}.json`),
+    address
+  }))
+)
 
 const createContract = (web3, abi, address) =>
   typeof web3.eth.Contract === 'function'
@@ -28,18 +35,12 @@ class MetronomeContracts {
     )
 
     const contracts = allContracts[chain]
-    Object.assign(this, mapValues(contracts, (contract, name) =>
-      createContract(
-        web3,
-        require(`./abis/${contract.version}/${name}.json`),
-        contract.address
-      )
+    Object.assign(this, mapValues(contracts, ({ abi, address }) =>
+      createContract(web3, abi, address)
     ))
   }
 }
 
-MetronomeContracts.addresses = mapValues(allContracts, contracts =>
-  mapValues(contracts, contract => contract.address)
-)
+Object.assign(MetronomeContracts, allContracts)
 
 module.exports = MetronomeContracts

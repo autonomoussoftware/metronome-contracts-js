@@ -10,7 +10,7 @@
 
 ## Install
 
-```batch
+```shell
 npm install --save metronome-contracts
 ```
 
@@ -20,11 +20,10 @@ npm install --save metronome-contracts
 const Web3 = require('web3')
 const MetronomeContracts = require('metronome-contracts')
 
-const web3 = new Web3('ws://localhost:8545')
+const web3 = new Web3('http://localhost:8545')
 const metronomeContracts = new MetronomeContracts(web3, 'mainnet')
 
-metronomeContracts.metToken.methods.balanceOf(address)
-  .then(console.log)
+metronomeContracts.METToken.methods.balanceOf(address).then(console.log)
 ```
 
 ## API
@@ -38,12 +37,12 @@ Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
 
-The instance of the Metronome contracts will have a property for each contract: `auctions`, `autonomousConverter`, `metToken`, `tokenPorter` and `validator`.
+The instance of the Metronome contracts will have a property for each contract: `Auctions`, `AutonomousConverter`, `METToken`, `TokenPorter` and `Validator`.
 Each contract is an instance of `web3.eth.Contract`.
 
-### `MetronomeContracts.addresses`
+### `MetronomeContracts.{chain}.{contractName}`
 
-This is a convenience object containing the addresses of the contracts for each supported chain i.e. `mainnet` and `ropsten`.
+This is a convenience object containing the `address` and the `abi` of the contract for the specified chain.
 
 ## Contracts API
 
