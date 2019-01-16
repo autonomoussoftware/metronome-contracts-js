@@ -46,23 +46,28 @@
   "ropsten": {
     "Auctions": {
       "address": "0x767182C6ef62398993099e5542Ab43c2456A8abA",
-      "version": "35a6cd3"
+      "version": "35a6cd3",
+      "actualCommitHash": "80364c4"
     },
     "AutonomousConverter": {
       "address": "0x638E84db864AA345266e1AEE13873b860aFe82e7",
-      "version": "35a6cd3"
+      "version": "35a6cd3",
+      "actualCommitHash": "80364c4"
     },
     "METToken": {
       "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3",
-      "version": "35a6cd3"
+      "version": "35a6cd3",
+      "actualCommitHash": "80364c4"
     },
     "TokenPorter": {
-      "address": "0x86a6e9CBf616f157e33f4B95Fa686Eb3e0d80B50",
-      "version": "368d83c"
+      "address": "0xb95079369c8e57e76f66f65cf4167b70a2df0aed",
+      "version": "368d83c",
+      "actualCommitHash": "17a8800"
     },
     "Validator": {
       "address": "0x73924d3c6dbAbf47Fffa2D9f9303Dc2049Aec44a",
-      "version": "368d83c"
+      "version": "368d83c",
+      "actualCommitHash": "81d451a"
     }
   }
 }
