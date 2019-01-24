@@ -32,7 +32,7 @@ metronomeContracts.METToken.methods.balanceOf(address).then(console.log)
 
 Constructor for the Metronome contracts object.
 It shall receive a `web3` instance and an optional `chain` parameter that default to `'mainnet'`.
-Other supported chains are: `'ropsten'`.
+Other supported chains are: `'ropsten'` and `'morden'`.
 Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
@@ -42,7 +42,7 @@ Each contract is an instance of `web3.eth.Contract`.
 
 ### `MetronomeContracts.{chain}.{contractName}`
 
-This is a convenience object containing the `address` and the `abi` of the contract for the specified chain.
+This is a convenience object containing the `abi`, `address` and the `birthblock` of the contract on the specified chain.
 
 ## Contracts API
 

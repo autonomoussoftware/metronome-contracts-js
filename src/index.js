@@ -6,10 +6,14 @@ const aliases = require('./aliases.json')
 const contractsDefinition = require('./contracts.json')
 
 const allContracts = mapValues(aliases, alias =>
-  mapValues(contractsDefinition[alias], ({ address, version }, name) => ({
-    abi: require(`./abis/${version}/${name}.json`),
-    address
-  }))
+  mapValues(
+    contractsDefinition[alias].contracts,
+    ({ address, birthblock, version }, name) => ({
+      abi: require(`./abis/${version}/${name}.json`),
+      address,
+      birthblock: birthblock || contractsDefinition[alias].birthblock
+    })
+  )
 )
 
 const createContract = (web3, abi, address) =>
@@ -23,18 +27,12 @@ class MetronomeContracts {
       throw new Error('Invalid web3 instance or not supplied')
     }
 
-    const chain = aliases[_chain]
+    const contracts = allContracts[aliases[_chain]]
 
-    if (!allContracts[chain]) {
+    if (!contracts) {
       throw new Error('Unknown "chain" parameter')
     }
 
-    this.chain = chain
-    this.addresses = mapValues(allContracts[chain], contract =>
-      contract.address
-    )
-
-    const contracts = allContracts[chain]
     Object.assign(this, mapValues(contracts, ({ abi, address }) =>
       createContract(web3, abi, address)
     ))
