@@ -2,12 +2,12 @@
 
 const mapValues = require('../lib/map-values')
 
-const aliases = require('./aliases.json')
+const chainAliases = require('./aliases.json')
 const contractsDefinition = require('./contracts.json')
 
 // Create an object containing all chains, its contracts and static data.
-const allContracts = mapValues(aliases, function (alias) {
-  const definitions = contractsDefinition[alias]
+const allContracts = mapValues(chainAliases, function (chainAlias) {
+  const definitions = contractsDefinition[chainAlias]
   return mapValues(
     definitions.contracts,
     ({ address, birthblock, version }, name) =>
@@ -48,7 +48,7 @@ class MetronomeContracts {
       throw new Error('Invalid web3 provided')
     }
 
-    const contracts = allContracts[aliases[chain]]
+    const contracts = allContracts[chainAliases[chain]]
 
     if (!contracts) {
       throw new Error('Unknown chain')

@@ -3,80 +3,66 @@
     "birthblock": 5659894,
     "contracts": {
       "Auctions": {
-        "address": "0x9d9BcDd249E439AAaB545F59a33812E39A8e3072",
-        "version": "35a6cd3"
+        "address": "0x9d9BcDd249E439AAaB545F59a33812E39A8e3072"
       },
       "AutonomousConverter": {
-        "address": "0x686e5ac50D9236A9b7406791256e47feDDB26AbA",
-        "version": "35a6cd3"
+        "address": "0x686e5ac50D9236A9b7406791256e47feDDB26AbA"
       },
       "METToken": {
-        "address": "0xa3d58c4E56fedCae3a7c43A725aeE9A71F0ece4e",
-        "version": "35a6cd3"
+        "address": "0xa3d58c4E56fedCae3a7c43A725aeE9A71F0ece4e"
       },
       "TokenPorter": {
-        "address": "0xD75A3e27CE57Bb7738D3B0c47B88F76F423Eb056",
-        "version": "35a6cd3"
+        "address": "0xD75A3e27CE57Bb7738D3B0c47B88F76F423Eb056"
       },
       "Validator": {
-        "address": "0xA5474B3EE0F86f75528b525C37440d61665f93c4",
-        "version": "35a6cd3"
+        "address": "0xA5474B3EE0F86f75528b525C37440d61665f93c4"
       }
-    }
+    },
+    "version": "35a6cd3"
   },
   "morden": {
     "birthblock": 3500148,
     "contracts": {
       "Auctions": {
-        "address": "0xB7F717948ce7b91e234dE93f6EdaBA8d314b8685",
-        "version": "368d83c"
+        "address": "0xB7F717948ce7b91e234dE93f6EdaBA8d314b8685"
       },
       "AutonomousConverter": {
-        "address": "0x60942c9D3775c4d71aC595F92fab1e0Cd1182020",
-        "version": "368d83c"
+        "address": "0x60942c9D3775c4d71aC595F92fab1e0Cd1182020"
       },
       "METToken": {
-        "address": "0x9B9fB9bbcF19b046d02Cd6b49207AD2466ec7A6D",
-        "version": "368d83c"
+        "address": "0x9B9fB9bbcF19b046d02Cd6b49207AD2466ec7A6D"
       },
       "TokenPorter": {
-        "address": "0x75F8C2e7CEe21C2De8d5105Ed68eCe297425c1d3",
-        "version": "368d83c"
+        "address": "0x75F8C2e7CEe21C2De8d5105Ed68eCe297425c1d3"
       },
       "Validator": {
-        "address": "0x874167A53c019279cbEC02Fa23CDe867db2Ae32a",
-        "version": "368d83c"
+        "address": "0x874167A53c019279cbEC02Fa23CDe867db2Ae32a"
       }
-    }
+    },
+    "version": "368d83c"
   },
   "ropsten": {
     "birthblock": 3399250,
     "contracts": {
       "Auctions": {
-        "address": "0x767182C6ef62398993099e5542Ab43c2456A8abA",
-        "version": "35a6cd3",
-        "actualCommitHash": "80364c4"
+        "address": "0x767182C6ef62398993099e5542Ab43c2456A8abA"
       },
       "AutonomousConverter": {
-        "address": "0x638E84db864AA345266e1AEE13873b860aFe82e7",
-        "version": "35a6cd3",
-        "actualCommitHash": "80364c4"
+        "address": "0x638E84db864AA345266e1AEE13873b860aFe82e7"
       },
       "METToken": {
-        "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3",
-        "version": "35a6cd3",
-        "actualCommitHash": "80364c4"
+        "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3"
       },
       "TokenPorter": {
+        "actualVersion": "17a8800",
         "address": "0xB95079369c8e57e76f66F65Cf4167b70a2df0aeD",
-        "version": "368d83c",
-        "actualCommitHash": "17a8800"
+        "version": "368d83c"
       },
       "Validator": {
         "address": "0x73924d3c6dbAbf47Fffa2D9f9303Dc2049Aec44a",
-        "version": "368d83c",
-        "actualCommitHash": "81d451a"
+        "version": "368d83c"
       }
-    }
+    },
+    "version": "35a6cd3"
   }
 }
