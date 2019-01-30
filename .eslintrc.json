@@ -1,3 +1,11 @@
 {
-  "extends": ["bloq"]
+  "extends": [
+    "bloq"
+  ],
+  "rules": {
+    "jsdoc/no-undefined-types": "off",
+    "jsdoc/require-returns-check": "off",
+    "jsdoc/require-returns": "off",
+    "require-jsdoc": "error"
+  }
 }
