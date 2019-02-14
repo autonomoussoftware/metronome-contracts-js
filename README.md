@@ -23,7 +23,7 @@ const MetronomeContracts = require('metronome-contracts')
 const web3 = new Web3('http://localhost:8545')
 const metronomeContracts = new MetronomeContracts(web3, 'mainnet')
 
-metronomeContracts.METToken.methods.balanceOf(address).then(console.log)
+metronomeContracts.METToken.methods.balanceOf(address).call().then(console.log)
 ```
 
 ## API
