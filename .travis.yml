@@ -3,14 +3,31 @@ sudo: false
 
 language: node_js
 node_js:
-  - "6"
-  - "8"
   - "10"
+  - "8"
+  - "6"
 
 cache:
   directories:
     - "node_modules"
 
-script:
-  - npm test
-  - npm run build
+jobs:
+  include:
+    - stage: build
+      script: npm run build
+    - stage: npm release
+      script: echo publishing...
+      before_deploy: 
+        - export VERSION_TAG=$(git ls-remote origin | grep "$TRAVIS_COMMIT\s\+refs/tags/v\d\+\.\d\+\.\d\+\^{}$")
+        - echo "$VERSION_TAG"
+        - echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ~/.npmrc
+        - npm i --global otp-cli
+        - export NPM_OTP=$(otp-cli totp generate -k "$NPM_OTP_SECRET")
+        - echo "$NPM_OTP"
+      deploy:
+        on: 
+          branch: master
+        provider: script
+        script: if [ -n "$VERSION_TAG" ]; then npm publish --otp "$NPM_OTP"; else echo commit not tagged; fi
+        skip_cleanup: true
+      after_deploy: rm ~/.npmrc
