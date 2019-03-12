@@ -54,13 +54,12 @@
         "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3"
       },
       "TokenPorter": {
-        "actualVersion": "17a8800",
-        "address": "0xB95079369c8e57e76f66F65Cf4167b70a2df0aeD",
-        "version": "368d83c"
+        "address": "0x00FDf6D3eFB98E2B308872a6DAEf0c74A7138a81",
+        "version": "cc15bd7"
       },
       "Validator": {
-        "address": "0x73924d3c6dbAbf47Fffa2D9f9303Dc2049Aec44a",
-        "version": "368d83c"
+        "address": "0xa23d5871924ee980b543227160FB9b42c06C195d",
+        "version": "cc15bd7"
       }
     },
     "version": "35a6cd3"
