@@ -21,25 +21,25 @@
     "version": "35a6cd3"
   },
   "morden": {
-    "birthblock": 3500148,
+    "birthblock": 3757156,
     "contracts": {
       "Auctions": {
-        "address": "0xB7F717948ce7b91e234dE93f6EdaBA8d314b8685"
+        "address": "0xa374400b63827b12f1479c25A2D48CA5d9f82aD8"
       },
       "AutonomousConverter": {
-        "address": "0x60942c9D3775c4d71aC595F92fab1e0Cd1182020"
+        "address": "0x161542e0a9142DdD36ECD9986FA82EEF79b1B520"
       },
       "METToken": {
-        "address": "0x9B9fB9bbcF19b046d02Cd6b49207AD2466ec7A6D"
+        "address": "0xCF844108879538f08556988598a8214a30Cde7e0"
       },
       "TokenPorter": {
-        "address": "0x75F8C2e7CEe21C2De8d5105Ed68eCe297425c1d3"
+        "address": "0x93259C7812a771e303B844218c68F16935fd5a38"
       },
       "Validator": {
-        "address": "0x874167A53c019279cbEC02Fa23CDe867db2Ae32a"
+        "address": "0xbAB6746BD0bd0b8847425B55bFa6fDF1deb0e90e"
       }
     },
-    "version": "368d83c"
+    "version": "6654baf"
   },
   "ropsten": {
     "birthblock": 3399250,

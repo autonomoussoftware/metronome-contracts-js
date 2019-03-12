@@ -514,25 +514,6 @@
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "tokenLockers",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
     "name": "token",
     "outputs": [
@@ -788,86 +769,6 @@
       }
     ],
     "name": "skipInitBecauseIAmNotOg",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_startTime",
-        "type": "uint256"
-      },
-      {
-        "name": "_minimumPrice",
-        "type": "uint256"
-      },
-      {
-        "name": "_startingPrice",
-        "type": "uint256"
-      },
-      {
-        "name": "_timeScale",
-        "type": "uint256"
-      }
-    ],
-    "name": "initAuctions",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_founder",
-        "type": "address"
-      },
-      {
-        "name": "_token",
-        "type": "address"
-      }
-    ],
-    "name": "createTokenLocker",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_founders",
-        "type": "uint256[]"
-      },
-      {
-        "name": "_token",
-        "type": "address"
-      },
-      {
-        "name": "_proceeds",
-        "type": "address"
-      },
-      {
-        "name": "_autonomousConverter",
-        "type": "address"
-      }
-    ],
-    "name": "mintInitialSupply",
     "outputs": [
       {
         "name": "",
