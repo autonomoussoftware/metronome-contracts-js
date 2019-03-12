@@ -86,6 +86,20 @@
   },
   {
     "constant": true,
+    "inputs": [],
+    "name": "proposals",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
     "inputs": [
       {
         "name": "",
@@ -247,6 +261,11 @@
         "type": "bytes32"
       },
       {
+        "indexed": true,
+        "name": "recipientAddr",
+        "type": "address"
+      },
+      {
         "indexed": false,
         "name": "isValid",
         "type": "bool"
@@ -323,6 +342,48 @@
       }
     ],
     "name": "updateThreshold",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_valCount",
+        "type": "uint256"
+      },
+      {
+        "name": "_threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "isNewThresholdValid",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_proposals",
+        "type": "address"
+      }
+    ],
+    "name": "setProposalContract",
     "outputs": [
       {
         "name": "",
@@ -422,6 +483,10 @@
       {
         "name": "_burnHash",
         "type": "bytes32"
+      },
+      {
+        "name": "_recipientAddr",
+        "type": "address"
       }
     ],
     "name": "refuteHash",
