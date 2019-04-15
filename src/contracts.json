@@ -24,19 +24,19 @@
     "birthblock": 3757156,
     "contracts": {
       "Auctions": {
-        "address": "0x3e2deb5d60b48050b18530062578cc7a68469b57"
+        "address": "0xbe0ab8365d8bcbe752fd37cad2f0c9f9da3e0c28"
       },
       "AutonomousConverter": {
-        "address": "0x22a95f7d5fd302d6989c8b9c92c037f547acd097"
+        "address": "0x0d90a91a09b24a6405da2fc96e230974d7d52cf8"
       },
       "METToken": {
-        "address": "0x1c6ccd91ce2534cb496ed5425401cbbd382dae92"
+        "address": "0x9d039beab386863ab9f92d4880879c394ad9b5fa"
       },
       "TokenPorter": {
-        "address": "0x44fc28013b03838ba3e3a3cd03f0982b3dc2e282"
+        "address": "0xe5f615a344b56e501547b98fc350eddd67b8a1d9"
       },
       "Validator": {
-        "address": "0xec908a4d1ac818878e56d48635619323034b28cc"
+        "address": "0xcf3c3744199c1bf8d408b53d81aeb7a0d8dc8ad9"
       }
     },
     "version": "65b375c"
@@ -54,12 +54,13 @@
         "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3"
       },
       "TokenPorter": {
-        "address": "0x00FDf6D3eFB98E2B308872a6DAEf0c74A7138a81",
-        "version": "cc15bd7"
+        "actualVersion": "17a8800",
+        "address": "0xB95079369c8e57e76f66F65Cf4167b70a2df0aeD",
+        "version": "368d83c"
       },
       "Validator": {
-        "address": "0xa23d5871924ee980b543227160FB9b42c06C195d",
-        "version": "cc15bd7"
+        "address": "0x73924d3c6dbAbf47Fffa2D9f9303Dc2049Aec44a",
+        "version": "368d83c"
       }
     },
     "version": "35a6cd3"

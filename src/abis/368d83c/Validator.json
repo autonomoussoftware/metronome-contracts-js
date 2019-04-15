@@ -247,11 +247,6 @@
         "type": "bytes32"
       },
       {
-        "indexed": true,
-        "name": "recipientAddr",
-        "type": "address"
-      },
-      {
         "indexed": false,
         "name": "isValid",
         "type": "bool"
@@ -427,10 +422,6 @@
       {
         "name": "_burnHash",
         "type": "bytes32"
-      },
-      {
-        "name": "_recipientAddr",
-        "type": "address"
       }
     ],
     "name": "refuteHash",

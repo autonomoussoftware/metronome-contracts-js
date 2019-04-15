@@ -2,7 +2,58 @@
   {
     "constant": true,
     "inputs": [],
-    "name": "importSequence",
+    "name": "name",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_spender",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "totalSupply",
     "outputs": [
       {
         "name": "",
@@ -11,6 +62,25 @@
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenPorter",
+        "type": "address"
+      }
+    ],
+    "name": "setTokenPorter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -35,7 +105,121 @@
   {
     "constant": true,
     "inputs": [],
-    "name": "validator",
+    "name": "decimals",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "transferAllowed",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_autonomousConverter",
+        "type": "address"
+      },
+      {
+        "name": "_minter",
+        "type": "address"
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256"
+      },
+      {
+        "name": "_decmult",
+        "type": "uint256"
+      }
+    ],
+    "name": "initToken",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "mint",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "tokenPorter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_spender",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approveMore",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "autonomousConverter",
     "outputs": [
       {
         "name": "",
@@ -50,15 +234,11 @@
     "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "address"
-      },
-      {
-        "name": "",
+        "name": "_owner",
         "type": "address"
       }
     ],
-    "name": "claimables",
+    "name": "balanceOf",
     "outputs": [
       {
         "name": "",
@@ -70,17 +250,26 @@
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "burnSequence",
-    "outputs": [
+    "constant": false,
+    "inputs": [
       {
-        "name": "",
+        "name": "_spender",
+        "type": "address"
+      },
+      {
+        "name": "_value",
         "type": "uint256"
       }
     ],
+    "name": "approveLess",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -99,39 +288,6 @@
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "exportedBurns",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "auctions",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
     "name": "owner",
     "outputs": [
@@ -146,35 +302,39 @@
   },
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "mintHashes",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
-    "name": "minimumExportFee",
+    "name": "symbol",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "string"
       }
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "destroy",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -182,14 +342,14 @@
     "inputs": [
       {
         "name": "",
-        "type": "bytes32"
+        "type": "address"
       }
     ],
-    "name": "burnHashes",
+    "name": "roots",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "bytes32"
       }
     ],
     "payable": false,
@@ -197,17 +357,29 @@
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "exportFee",
-    "outputs": [
+    "constant": false,
+    "inputs": [
       {
-        "name": "",
+        "name": "_autonomousConverter",
+        "type": "address"
+      },
+      {
+        "name": "_minter",
+        "type": "address"
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256"
+      },
+      {
+        "name": "_decmult",
         "type": "uint256"
       }
     ],
+    "name": "initMintable",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -215,13 +387,25 @@
     "inputs": [
       {
         "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "burnAtTick",
-    "outputs": [
+        "type": "address"
+      },
       {
         "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "subs",
+    "outputs": [
+      {
+        "name": "startTime",
+        "type": "uint256"
+      },
+      {
+        "name": "payPerWeek",
+        "type": "uint256"
+      },
+      {
+        "name": "lastWithdrawTime",
         "type": "uint256"
       }
     ],
@@ -247,67 +431,19 @@
     "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "supplyOnAllChains",
-    "outputs": [
+        "name": "_owner",
+        "type": "address"
+      },
       {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes8"
-      }
-    ],
-    "name": "destinationChains",
-    "outputs": [
-      {
-        "name": "",
+        "name": "_spender",
         "type": "address"
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "token",
+    "name": "allowance",
     "outputs": [
       {
         "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "merkleRoots",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32"
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -318,171 +454,90 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "name": "destinationChain",
-        "type": "bytes8"
-      },
-      {
-        "indexed": false,
-        "name": "destinationMetronomeAddr",
+        "indexed": true,
+        "name": "subscriber",
         "type": "address"
       },
       {
         "indexed": true,
-        "name": "destinationRecipientAddr",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "name": "amountToBurn",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "fee",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "extraData",
-        "type": "bytes"
-      },
-      {
-        "indexed": false,
-        "name": "currentTick",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "burnSequence",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "currentBurnHash",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "name": "prevBurnHash",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "name": "dailyMintable",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "supplyOnAllChains",
-        "type": "uint256[]"
-      },
-      {
-        "indexed": false,
-        "name": "blockTimestamp",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "exporter",
+        "name": "subscribesTo",
         "type": "address"
       }
     ],
-    "name": "LogExportReceipt",
+    "name": "LogSubscription",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "name": "originChain",
-        "type": "bytes8"
-      },
-      {
         "indexed": true,
-        "name": "currentBurnHash",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "name": "prevHash",
-        "type": "bytes32"
-      },
-      {
-        "indexed": true,
-        "name": "destinationRecipientAddr",
+        "name": "subscriber",
         "type": "address"
       },
       {
-        "indexed": false,
-        "name": "amountToImport",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "fee",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "exportTimeStamp",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "burnSequence",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "extraData",
-        "type": "bytes"
+        "indexed": true,
+        "name": "subscribesTo",
+        "type": "address"
       }
     ],
-    "name": "LogImportRequest",
+    "name": "LogCancelSubscription",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "name": "originChain",
-        "type": "bytes8"
-      },
-      {
         "indexed": true,
-        "name": "destinationRecipientAddr",
+        "name": "_to",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "amountImported",
+        "name": "_value",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "fee",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "extraData",
-        "type": "bytes"
-      },
-      {
-        "indexed": true,
-        "name": "importSequence",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "name": "currentHash",
-        "type": "bytes32"
       }
     ],
-    "name": "LogImport",
+    "name": "Mint",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_from",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Destroy",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Transfer",
     "type": "event"
   },
   {
@@ -507,36 +562,44 @@
     "inputs": [
       {
         "indexed": true,
-        "name": "destinationMetronomeAddr",
+        "name": "_owner",
         "type": "address"
       },
       {
         "indexed": true,
-        "name": "destinationRecipientAddr",
+        "name": "_spender",
         "type": "address"
       },
       {
         "indexed": false,
-        "name": "amount",
+        "name": "_value",
         "type": "uint256"
       }
     ],
-    "name": "ExportOnChainClaimedReceiptLog",
+    "name": "Approval",
     "type": "event"
   },
   {
     "constant": false,
     "inputs": [
       {
-        "name": "_tokenAddr",
+        "name": "_autonomousConverter",
         "type": "address"
       },
       {
-        "name": "_auctionsAddr",
+        "name": "_minter",
         "type": "address"
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256"
+      },
+      {
+        "name": "_decmult",
+        "type": "uint256"
       }
     ],
-    "name": "initTokenPorter",
+    "name": "initMETToken",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -544,13 +607,8 @@
   },
   {
     "constant": false,
-    "inputs": [
-      {
-        "name": "_minimumExportFee",
-        "type": "uint256"
-      }
-    ],
-    "name": "setMinimumExportFee",
+    "inputs": [],
+    "name": "enableMETTransfers",
     "outputs": [
       {
         "name": "",
@@ -565,99 +623,125 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_exportFee",
-        "type": "uint256"
-      }
-    ],
-    "name": "setExportFeePerTenThousand",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_validator",
+        "name": "_to",
         "type": "address"
-      }
-    ],
-    "name": "setValidator",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_chainName",
-        "type": "bytes8"
       },
       {
-        "name": "_contractAddress",
-        "type": "address"
-      }
-    ],
-    "name": "addDestinationChain",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_chainName",
-        "type": "bytes8"
-      }
-    ],
-    "name": "removeDestinationChain",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "recipients",
-        "type": "address[]"
-      }
-    ],
-    "name": "claimReceivables",
-    "outputs": [
-      {
-        "name": "",
+        "name": "_value",
         "type": "uint256"
       }
     ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address"
+      },
+      {
+        "name": "_to",
+        "type": "address"
+      },
+      {
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "bits",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "multiTransfer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "data",
+        "type": "bytes32"
+      }
+    ],
+    "name": "setRoot",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "getRoot",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "a",
+        "type": "address"
+      },
+      {
+        "name": "b",
+        "type": "address"
+      }
+    ],
+    "name": "rootsMatch",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -711,10 +795,6 @@
     "constant": false,
     "inputs": [
       {
-        "name": "tokenOwner",
-        "type": "address"
-      },
-      {
         "name": "_destChain",
         "type": "bytes8"
       },
@@ -754,43 +834,134 @@
     "constant": false,
     "inputs": [
       {
-        "name": "originChain",
-        "type": "bytes8"
+        "name": "_startTime",
+        "type": "uint256"
       },
       {
-        "name": "recipientAddress",
+        "name": "_payPerWeek",
+        "type": "uint256"
+      },
+      {
+        "name": "_recipient",
         "type": "address"
-      },
-      {
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "name": "fee",
-        "type": "uint256"
-      },
-      {
-        "name": "extraData",
-        "type": "bytes"
-      },
-      {
-        "name": "currentHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "globalSupplyInOtherChains",
-        "type": "uint256"
-      },
-      {
-        "name": "validators",
-        "type": "address[]"
       }
     ],
-    "name": "mintToken",
+    "name": "subscribe",
     "outputs": [
       {
         "name": "",
         "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_recipient",
+        "type": "address"
+      }
+    ],
+    "name": "cancelSubscription",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "name": "_recipient",
+        "type": "address"
+      }
+    ],
+    "name": "getSubscription",
+    "outputs": [
+      {
+        "name": "startTime",
+        "type": "uint256"
+      },
+      {
+        "name": "payPerWeek",
+        "type": "uint256"
+      },
+      {
+        "name": "lastWithdrawTime",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "name": "subWithdraw",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_owners",
+        "type": "address[]"
+      }
+    ],
+    "name": "multiSubWithdraw",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_owners",
+        "type": "address[]"
+      },
+      {
+        "name": "_recipients",
+        "type": "address[]"
+      }
+    ],
+    "name": "multiSubWithdrawFor",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
       }
     ],
     "payable": false,
