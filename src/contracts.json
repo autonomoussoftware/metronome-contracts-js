@@ -37,6 +37,10 @@
       },
       "Validator": {
         "address": "0x43b55499006596a2c87505553E7Cc9B0971E152c"
+      },
+      "Proposals": {
+        "address": "0x66d6e2f2755a5e6d6ac89570f558f0a4b15d3741",
+        "version": "a9fdd1a"
       }
     },
     "version": "4af63f2"
@@ -60,6 +64,10 @@
       "Validator": {
         "address": "0xd51C065E8a1CcCc67f2CdCf80ad6977E0727A377",
         "version": "24baa73"
+      },
+      "Proposals": {
+        "address": "0x03ba3b976f4d250a44cce3a233a4179ee5b4f79d",
+        "version": "2e4e938"
       }
     },
     "version": "35a6cd3"
