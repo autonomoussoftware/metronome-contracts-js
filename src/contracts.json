@@ -24,23 +24,25 @@
     "birthblock": 3757156,
     "contracts": {
       "Auctions": {
-        "address": "0xd270b29510C9e3F20ceCadfA048dE1cd8F701Ffe"
+        "address": "0x65c924CEF22901a35a904b6E70417CF34aE7894B"
       },
       "AutonomousConverter": {
-        "address": "0xe1555956743c44A4A11467995d2486b87838Ed24"
+        "address": "0xAb920becD28b2bd3c1B90542854aAF7c03f0D2dC"
       },
       "METToken": {
-        "address": "0x6fDF2590bFEF9E850a69f1279eC50c1456275Ec7"
+        "address": "0x82eae2a5F9771b227c05dce1B4FE539bf664718e"
       },
       "TokenPorter": {
-        "address": "0xCD4755Db144850025623572871Fc5D40E641FEd4"
+        "address": "0x8EBcE60a5d4d08a92fE4d68401984F70D00d4e5B",
+        "version": "18e06e7"
       },
       "Validator": {
-        "address": "0x43b55499006596a2c87505553E7Cc9B0971E152c"
+        "address": "0xdb71855ae18BB34497B49Fe673fA9D738B397Fe7",
+        "version": "18e06e7"
       },
       "Proposals": {
-        "address": "0x66d6e2f2755a5e6d6ac89570f558f0a4b15d3741",
-        "version": "a9fdd1a"
+        "address": "0x792D155C7E80D9037f9344C2401610bdEbeB1F40",
+        "version": "18e06e7"
       }
     },
     "version": "4af63f2"
@@ -58,16 +60,16 @@
         "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3"
       },
       "TokenPorter": {
-        "address": "0xc186171122032FA151B53062316951c7646678F7",
-        "version": "24baa73"
+        "address": "0x21c8CeB0c6f6c5357E9D6082B38425e46fdc6177",
+        "version": "7e8f2e3"
       },
       "Validator": {
-        "address": "0xd51C065E8a1CcCc67f2CdCf80ad6977E0727A377",
-        "version": "24baa73"
+        "address": "0xe0CB1167725CDb0e77c0362EAf32Ae198Ebc4902",
+        "version": "7e8f2e3"
       },
       "Proposals": {
-        "address": "0x03ba3b976f4d250a44cce3a233a4179ee5b4f79d",
-        "version": "2e4e938"
+        "address": "0xdC48aBe19B9e41d9A9B6A8B1E5793FeEf91faB6e",
+        "version": "7e8f2e3"
       }
     },
     "version": "35a6cd3"
