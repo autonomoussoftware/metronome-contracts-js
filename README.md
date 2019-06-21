@@ -32,7 +32,7 @@ metronomeContracts.METToken.methods.balanceOf(address).call().then(console.log)
 
 Constructor for the Metronome contracts object.
 It shall receive a `web3` instance and an optional `chain` parameter that default to `'mainnet'`.
-Other supported chains are: `'ropsten'` and `'morden'`.
+Other supported chains are: `'classic'`, `'ropsten'` and `'morden'`.
 Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
@@ -49,9 +49,10 @@ This is a convenience object containing the `abi`, `address` and the `birthblock
   - [`Auctions`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#auction-api)
   - [`Autonomous Converter`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#autonomous-converter-contract-api)
   - [`METToken`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#token-api)
+  - `Proposals`
   - [`TokenPorter`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#tokenporter-api)
   - [`Validator`](https://github.com/autonomoussoftware/documentation/blob/master/owners_manual/owners_manual.md#validator-api)
 
 ## License
 
-[MIT](https://github.com/autonomoussoftware/metronome-contracts-js/blob/master/LICENSE)
+MIT

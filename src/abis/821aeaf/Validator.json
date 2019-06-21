@@ -483,6 +483,50 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "validator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "LogValidatorAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "validator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "LogValidatorRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "name": "prevOwner",
         "type": "address"
       },

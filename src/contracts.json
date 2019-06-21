@@ -1,4 +1,29 @@
 {
+  "classic": {
+    "birthblock": 8000000,
+    "contracts": {
+      "Auctions": {
+        "address": "0x"
+      },
+      "AutonomousConverter": {
+        "address": "0x"
+      },
+      "METToken": {
+        "address": "0x"
+      },
+      "Proposals": {
+        "address": "0x",
+        "version": ""
+      },
+      "TokenPorter": {
+        "address": "0x"
+      },
+      "Validator": {
+        "address": "0x"
+      }
+    },
+    "version": "3a9a045"
+  },
   "mainnet": {
     "birthblock": 5659894,
     "contracts": {
@@ -11,11 +36,17 @@
       "METToken": {
         "address": "0xa3d58c4E56fedCae3a7c43A725aeE9A71F0ece4e"
       },
+      "Proposals": {
+        "address": "0x",
+        "version": "821aeaf"
+      },
       "TokenPorter": {
-        "address": "0xD75A3e27CE57Bb7738D3B0c47B88F76F423Eb056"
+        "address": "0x",
+        "version": "821aeaf"
       },
       "Validator": {
-        "address": "0xA5474B3EE0F86f75528b525C37440d61665f93c4"
+        "address": "0x",
+        "version": "821aeaf"
       }
     },
     "version": "35a6cd3"
@@ -32,16 +63,16 @@
       "METToken": {
         "address": "0x82eae2a5F9771b227c05dce1B4FE539bf664718e"
       },
+      "Proposals": {
+        "address": "0x792D155C7E80D9037f9344C2401610bdEbeB1F40",
+        "version": "18e06e7"
+      },
       "TokenPorter": {
         "address": "0x8EBcE60a5d4d08a92fE4d68401984F70D00d4e5B",
         "version": "18e06e7"
       },
       "Validator": {
         "address": "0xdb71855ae18BB34497B49Fe673fA9D738B397Fe7",
-        "version": "18e06e7"
-      },
-      "Proposals": {
-        "address": "0x792D155C7E80D9037f9344C2401610bdEbeB1F40",
         "version": "18e06e7"
       }
     },
@@ -59,16 +90,16 @@
       "METToken": {
         "address": "0xF3e9a687Fdf24112745D4d7dEe150BA87A07ecc3"
       },
+      "Proposals": {
+        "address": "0xdC48aBe19B9e41d9A9B6A8B1E5793FeEf91faB6e",
+        "version": "7e8f2e3"
+      },
       "TokenPorter": {
         "address": "0x21c8CeB0c6f6c5357E9D6082B38425e46fdc6177",
         "version": "7e8f2e3"
       },
       "Validator": {
         "address": "0xe0CB1167725CDb0e77c0362EAf32Ae198Ebc4902",
-        "version": "7e8f2e3"
-      },
-      "Proposals": {
-        "address": "0xdC48aBe19B9e41d9A9B6A8B1E5793FeEf91faB6e",
         "version": "7e8f2e3"
       }
     },

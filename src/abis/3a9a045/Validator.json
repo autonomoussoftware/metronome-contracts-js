@@ -3,6 +3,58 @@
     "constant": false,
     "inputs": [
       {
+        "name": "_tokenPorter",
+        "type": "address"
+      }
+    ],
+    "name": "setTokenPorter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_proposals",
+        "type": "address"
+      }
+    ],
+    "name": "setProposalContract",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getValidatorsCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
         "name": "_newOwner",
         "type": "address"
       }
@@ -35,6 +87,20 @@
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_validator",
+        "type": "address"
+      }
+    ],
+    "name": "removeValidator",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -82,6 +148,20 @@
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_validator",
+        "type": "address"
+      }
+    ],
+    "name": "addValidator",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -164,6 +244,70 @@
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_burnHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_originChain",
+        "type": "bytes8"
+      },
+      {
+        "name": "_recipientAddr",
+        "type": "address"
+      },
+      {
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "name": "_fee",
+        "type": "uint256"
+      },
+      {
+        "name": "_proof",
+        "type": "bytes32[]"
+      },
+      {
+        "name": "_extraData",
+        "type": "bytes"
+      },
+      {
+        "name": "_globalSupplyInOtherChains",
+        "type": "uint256"
+      }
+    ],
+    "name": "attestHash",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenAddr",
+        "type": "address"
+      },
+      {
+        "name": "_auctionsAddr",
+        "type": "address"
+      },
+      {
+        "name": "_tokenPorterAddr",
+        "type": "address"
+      }
+    ],
+    "name": "initValidator",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [
       {
@@ -217,6 +361,66 @@
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateThreshold",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_burnHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_recipientAddr",
+        "type": "address"
+      }
+    ],
+    "name": "refuteHash",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_valCount",
+        "type": "uint256"
+      },
+      {
+        "name": "_threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "isNewThresholdValid",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -279,6 +483,50 @@
     "inputs": [
       {
         "indexed": true,
+        "name": "validator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "LogValidatorAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "validator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "threshold",
+        "type": "uint256"
+      }
+    ],
+    "name": "LogValidatorRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "name": "prevOwner",
         "type": "address"
       },
@@ -290,209 +538,5 @@
     ],
     "name": "OwnershipChanged",
     "type": "event"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_validator",
-        "type": "address"
-      }
-    ],
-    "name": "addValidator",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_validator",
-        "type": "address"
-      }
-    ],
-    "name": "removeValidator",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getValidatorsCount",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_threshold",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateThreshold",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_valCount",
-        "type": "uint256"
-      },
-      {
-        "name": "_threshold",
-        "type": "uint256"
-      }
-    ],
-    "name": "isNewThresholdValid",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_proposals",
-        "type": "address"
-      }
-    ],
-    "name": "setProposalContract",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_tokenPorter",
-        "type": "address"
-      }
-    ],
-    "name": "setTokenPorter",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_tokenAddr",
-        "type": "address"
-      },
-      {
-        "name": "_auctionsAddr",
-        "type": "address"
-      },
-      {
-        "name": "_tokenPorterAddr",
-        "type": "address"
-      }
-    ],
-    "name": "initValidator",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_burnHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_originChain",
-        "type": "bytes8"
-      },
-      {
-        "name": "_recipientAddr",
-        "type": "address"
-      },
-      {
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "name": "_fee",
-        "type": "uint256"
-      },
-      {
-        "name": "_proof",
-        "type": "bytes32[]"
-      },
-      {
-        "name": "_extraData",
-        "type": "bytes"
-      },
-      {
-        "name": "_globalSupplyInOtherChains",
-        "type": "uint256"
-      }
-    ],
-    "name": "attestHash",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_burnHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_recipientAddr",
-        "type": "address"
-      }
-    ],
-    "name": "refuteHash",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
   }
 ]

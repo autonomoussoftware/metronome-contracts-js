@@ -54,6 +54,20 @@
   {
     "constant": true,
     "inputs": [],
+    "name": "chainHopStartTime",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
     "name": "validator",
     "outputs": [
       {
@@ -315,6 +329,25 @@
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_startTime",
+        "type": "uint256"
+      }
+    ],
+    "name": "setChainHopStartTime",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [
       {
@@ -401,25 +434,6 @@
     ],
     "payable": false,
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "burnAtTick",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -795,6 +809,150 @@
       }
     ],
     "name": "ExportOnChainClaimedReceiptLog",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "destinationChain",
+        "type": "bytes8"
+      },
+      {
+        "indexed": false,
+        "name": "destinationMetronomeAddr",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "destinationRecipientAddr",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amountToBurn",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "fee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "extraData",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "currentTick",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "burnSequence",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "currentBurnHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "prevBurnHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "dailyMintable",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "supplyOnAllChains",
+        "type": "uint256[]"
+      },
+      {
+        "indexed": false,
+        "name": "genesisTime",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "blockTimestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "dailyAuctionStartTime",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExportReceiptLog",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "destinationRecipientAddr",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "amountImported",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "fee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "extraData",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "name": "currentTick",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "importSequence",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "currentHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "prevHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "dailyMintable",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "blockTimestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "ImportReceiptLog",
     "type": "event"
   }
 ]

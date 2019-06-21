@@ -1,8 +1,9 @@
 {
   "1": "mainnet",
-  "2": "morden",
   "3": "ropsten",
+  "61": "classic",
   "62": "morden",
+  "classic": "classic",
   "main": "mainnet",
   "mainnet": "mainnet",
   "morden": "morden",
