@@ -1,6 +1,6 @@
 'use strict'
 
-const mapValues = require('../lib/map-values')
+const mapValues = require('modify-values')
 
 const chainAliases = require('./aliases.json')
 const contractsDefinition = require('./contracts.json')
@@ -22,7 +22,7 @@ const allContracts = mapValues(chainAliases, function (chainAlias) {
 /**
  * Create a contract using either web3@0.2x or web3@1.0.0
  *
- * @param {Web3} web3 The Web3 instance to instantiate the contracts.
+ * @param {object} web3 The Web3 instance to instantiate the contracts.
  * @param {Array} abi The contract's ABI.
  * @param {string} address The contract's address.
  * @returns {*} The contract instance.
