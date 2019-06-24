@@ -1,25 +1,24 @@
 {
   "classic": {
-    "birthblock": 8000000,
+    "birthblock": 8285377,
     "contracts": {
       "Auctions": {
-        "address": "0x"
+        "address": "0xF5269Caa54F1f776dD996Db35992D599e14d8a3B"
       },
       "AutonomousConverter": {
-        "address": "0x"
+        "address": "0x567EEBB6397cC8345e5A7eAE288994bf45FDF85B"
       },
       "METToken": {
-        "address": "0x"
+        "address": "0xA4d3A7b00056Cc5D8206b3b2983bfe0C107D90da"
       },
       "Proposals": {
-        "address": "0x",
-        "version": ""
+        "address": "0x62c42c2Ee48E6034B0556ebCCF58A2E0eEB8E538"
       },
       "TokenPorter": {
-        "address": "0x"
+        "address": "0x17B418cBE5c4F6DD75BdCA7F8BFBB1424062D9ef"
       },
       "Validator": {
-        "address": "0x"
+        "address": "0x7f37407F868E6A88f9838B57B00FEB04f23E7F9F"
       }
     },
     "version": "3a9a045"
@@ -37,15 +36,15 @@
         "address": "0xa3d58c4E56fedCae3a7c43A725aeE9A71F0ece4e"
       },
       "Proposals": {
-        "address": "0x",
+        "address": "0x760a0A933f9597fbC3B4DB86Ef92D61c956269E4",
         "version": "821aeaf"
       },
       "TokenPorter": {
-        "address": "0x",
+        "address": "0xc0CEF6cF59e56A9427CEF967f8dFb7BDe06173B3",
         "version": "821aeaf"
       },
       "Validator": {
-        "address": "0x",
+        "address": "0xE804EBEfF801a63De6e746c24cEB41A9864Eb1C1",
         "version": "821aeaf"
       }
     },
