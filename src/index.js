@@ -1,6 +1,7 @@
 'use strict'
 
 const mapValues = require('modify-values')
+const { Qtum } = require('qtumjs')
 
 const chainAliases = require('./aliases.json')
 const contractsDefinition = require('./contracts.json')
@@ -27,10 +28,20 @@ const allContracts = mapValues(chainAliases, function (chainAlias) {
  * @param {string} address The contract's address.
  * @returns {*} The contract instance.
  */
-const createContract = (web3, abi, address) =>
-  typeof web3.eth.Contract === 'function'
-    ? new web3.eth.Contract(abi, address)
-    : web3.eth.contract(abi).at(address)
+
+const createContract = function (web3, abi, address, qtumrpc) {
+  let contract
+  if (qtumrpc) {
+    const contractsRepo = { contracts: { '': { abi, address } } }
+    const qtum = new Qtum(qtumrpc, contractsRepo)
+    contract = qtum.contract('')
+  } else {
+    contract = typeof web3.eth.Contract === 'function'
+      ? new web3.eth.Contract(abi, address)
+      : web3.eth.contract(abi).at(address)
+  }
+  return contract
+}
 
 /** Class representing a contracts set. */
 class MetronomeContracts {
@@ -42,10 +53,11 @@ class MetronomeContracts {
    *
    * @param {Web3} web3 The Web3 instance to instantiate the contracts.
    * @param {string} [chain='mainnet'] The target chain name or ID.
+   * @param {string} qtumrpc qtum rpc url
    */
-  constructor (web3, chain = 'mainnet') {
+  constructor (web3, chain = 'mainnet', qtumrpc) {
     if (!web3 || !web3.eth) {
-      throw new Error('Invalid web3 provided')
+      throw new Error('Invalid web3 or qtumrpc provided')
     }
 
     const contracts = allContracts[chainAliases[chain]]
@@ -55,7 +67,7 @@ class MetronomeContracts {
     }
 
     Object.assign(this, mapValues(contracts, ({ abi, address }) =>
-      createContract(web3, abi, address)
+      createContract(web3, abi, address, qtumrpc)
     ))
   }
 }

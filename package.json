@@ -36,7 +36,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "modify-values": "^1.0.1"
+    "modify-values": "^1.0.1",
+    "qtumjs": "^1.9.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",

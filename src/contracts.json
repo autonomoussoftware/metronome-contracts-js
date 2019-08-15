@@ -50,32 +50,29 @@
     },
     "version": "35a6cd3"
   },
-  "morden": {
-    "birthblock": 3757156,
+  "mordor": {
+    "birthblock": 35554,
     "contracts": {
       "Auctions": {
-        "address": "0x65c924CEF22901a35a904b6E70417CF34aE7894B"
+        "address": "0x91D4f7097eA3A5cD3fDC9FC863dF9A0d6Ae64738"
       },
       "AutonomousConverter": {
-        "address": "0xAb920becD28b2bd3c1B90542854aAF7c03f0D2dC"
+        "address": "0x6ffAEBfd319cB66743acba078e173eD27B33a2a3"
       },
       "METToken": {
-        "address": "0x82eae2a5F9771b227c05dce1B4FE539bf664718e"
+        "address": "0x2faE8aF94CdC68452042CCFc2AbF25a9120Fdb2E"
       },
       "Proposals": {
-        "address": "0x792D155C7E80D9037f9344C2401610bdEbeB1F40",
-        "version": "18e06e7"
+        "address": "0xb4C458a0389C7DFC325B5d97143b09D03a958Cf1"
       },
       "TokenPorter": {
-        "address": "0x8EBcE60a5d4d08a92fE4d68401984F70D00d4e5B",
-        "version": "18e06e7"
+        "address": "0x62187b4AA3BDA5bF7580fa4aa89659f018bb958f"
       },
       "Validator": {
-        "address": "0xdb71855ae18BB34497B49Fe673fA9D738B397Fe7",
-        "version": "18e06e7"
+        "address": "0x444E8fafB172cF0Df4Be1B4c20e24a48bd4a0Ae0"
       }
     },
-    "version": "4af63f2"
+    "version": "b21557f"
   },
   "ropsten": {
     "birthblock": 3399250,
@@ -103,5 +100,29 @@
       }
     },
     "version": "35a6cd3"
+  },
+  "qtumTestnet": {
+    "birthblock": 222408,
+    "version": "6d976f7",
+    "contracts": {
+      "Auctions": {
+        "address": "0xB3F2D768Fb1f2e341f5fE72F1B207FADa4E51fE3"
+      },
+      "AutonomousConverter": {
+        "address": "0xD27eD9A738D166a68D499B355995BebFbd7B3955"
+      },
+      "METToken": {
+        "address": "0x16D74daC67aD7AF791427A00e5C687c204B733aB"
+      },
+      "Proposals": {
+        "address": "0xa6Ca7eA28A78572CA06C8376555D8896f37ec6F8"
+      },
+      "TokenPorter": {
+        "address": "0x4aa625D067457b6E5df52275048E70E68EA1BFF7"
+      },
+      "Validator": {
+        "address": "0x39E910a1439Cc806a3dcb5F253D8Fa28a5B0C598"
+      }
+    }
   }
 }

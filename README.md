@@ -32,7 +32,7 @@ metronomeContracts.METToken.methods.balanceOf(address).call().then(console.log)
 
 Constructor for the Metronome contracts object.
 It shall receive a `web3` instance and an optional `chain` parameter that default to `'mainnet'`.
-Other supported chains are: `'classic'`, `'ropsten'` and `'morden'`.
+Other supported chains are: `'classic'`, `'ropsten'` and `'mordor'`.
 Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`

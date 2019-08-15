@@ -1,0 +1,1153 @@
+[
+    {
+      "name": "initialAuctionEndTime",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "priceAt",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "initialPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_n",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "price",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "minimumPriceInDailyAuction",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "MULTIPLIER",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "currentTick",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "mintInitialSupply",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_founders",
+          "type": "uint256[]",
+          "indexed": false
+        },
+        {
+          "name": "_token",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "_proceeds",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "_autonomousConverter",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "tentimes",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "restartAuction",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "initAuctions",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_startTime",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_minimumPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_timeScale",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "initialized",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "isInitialAuctionEnded",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "currentMintable",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "isRunning",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "lastPurchaseTick",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "globalMetSupply",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "changeOwnership",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "INITIAL_AC_SUPPLY",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "globalDailySupply",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "INITIAL_SUPPLY",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "hundredtimes",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "heartbeat",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "_chain",
+          "type": "bytes8",
+          "indexed": false
+        },
+        {
+          "name": "auctionAddr",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "convertAddr",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "tokenAddr",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "minting",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "totalMET",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "proceedsBal",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "currTick",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "currAuction",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "nextAuctionGMT",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "genesisGMT",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "currentAuctionPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_dailyMintable",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_lastPurchasePrice",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "createTokenLocker",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_founder",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "_token",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "outputs": [],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "genesisTime",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "stopEverything",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "currentAuction",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "dailyAuctionStartTime",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "mintable",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "minted",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "tokensOnThisChain",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "proceeds",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "INITIAL_GLOBAL_DAILY_SUPPLY",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "whatWouldPurchaseDo",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_wei",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_timestamp",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "weiPerToken",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "tokens",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "refund",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "acceptOwnership",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "totalMigratedIn",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "minimumPrice",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "lastPurchasePrice",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "dailyMintable",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "owner",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "thousandtimes",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "currentPrice",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "weiPerToken",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "priceAtInitialAuction",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "lastPurchasePrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "numTicks",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "price",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "initPricer",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "initialAuctionDuration",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "chain",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes8",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "whichTick",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "t",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "newOwner",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "DAILY_PURCHASE_LIMIT",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "INITIAL_FOUNDER_SUPPLY",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "prepareAuctionForNonOGChain",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "founders",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "globalSupplyAfterPercentageLogic",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "skipInitBecauseIAmNotOg",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "_proceeds",
+          "type": "address",
+          "indexed": false
+        },
+        {
+          "name": "_genesisTime",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_minimumPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_startingPrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_timeScale",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "_chain",
+          "type": "bytes8",
+          "indexed": false
+        },
+        {
+          "name": "_initialAuctionEndTime",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "indexed": false
+        }
+      ],
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "totalMigratedOut",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "AUCTION_WHEN_PERCENTAGE_LOGIC_STARTS",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "timeScale",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "tokenLockers",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "token",
+      "type": "function",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "whichAuction",
+      "type": "function",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "_tick",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "constant": true,
+      "anonymous": false
+    },
+    {
+      "name": "",
+      "type": "constructor",
+      "payable": false,
+      "inputs": [],
+      "outputs": null,
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "",
+      "type": "fallback",
+      "payable": true,
+      "inputs": null,
+      "outputs": null,
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "LogAuctionFundsIn",
+      "type": "event",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "sender",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "tokens",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "purchasePrice",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "refund",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "outputs": null,
+      "constant": false,
+      "anonymous": false
+    },
+    {
+      "name": "OwnershipChanged",
+      "type": "event",
+      "payable": false,
+      "inputs": [
+        {
+          "name": "prevOwner",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "newOwner",
+          "type": "address",
+          "indexed": true
+        }
+      ],
+      "outputs": null,
+      "constant": false,
+      "anonymous": false
+    }
+  ]

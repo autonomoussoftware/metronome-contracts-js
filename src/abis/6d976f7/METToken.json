@@ -1,0 +1,1135 @@
+[
+  {
+    "name": "name",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "minter",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "getRoot",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "approve",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_spender",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "totalSupply",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "initMETToken",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_autonomousConverter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_minter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_decmult",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "setTokenPorter",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_tokenPorter",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "transferFrom",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "changeOwnership",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_newOwner",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "decimals",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "transferAllowed",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "initToken",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_autonomousConverter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_minter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_decmult",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "mint",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "export",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_destChain",
+        "type": "bytes8",
+        "indexed": false
+      },
+      {
+        "name": "_destMetronomeAddr",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_destRecipAddr",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_amount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_fee",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_extraData",
+        "type": "bytes",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "tokenPorter",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "approveMore",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_spender",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "enableMETTransfers",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "autonomousConverter",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "getSubscription",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_recipient",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "startTime",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "payPerWeek",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "lastWithdrawTime",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "leakage",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "importMET",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_originChain",
+        "type": "bytes8",
+        "indexed": false
+      },
+      {
+        "name": "_destinationChain",
+        "type": "bytes8",
+        "indexed": false
+      },
+      {
+        "name": "_addresses",
+        "type": "address[]",
+        "indexed": false
+      },
+      {
+        "name": "_extraData",
+        "type": "bytes",
+        "indexed": false
+      },
+      {
+        "name": "_burnHashes",
+        "type": "bytes32[]",
+        "indexed": false
+      },
+      {
+        "name": "_supplyOnAllChains",
+        "type": "uint256[]",
+        "indexed": false
+      },
+      {
+        "name": "_importData",
+        "type": "uint256[]",
+        "indexed": false
+      },
+      {
+        "name": "_proof",
+        "type": "bytes",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "balanceOf",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "approveLess",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_spender",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "acceptOwnership",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "owner",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "subWithdraw",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "cancelSubscription",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_recipient",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "symbol",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "destroy",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "roots",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "transfer",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_to",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "subscribe",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_startTime",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_payPerWeek",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_recipient",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "multiTransfer",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "bits",
+        "type": "uint256[]",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "updateLeakage",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "resetLeakage",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "multiSubWithdraw",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owners",
+        "type": "address[]",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "initMintable",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_autonomousConverter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_minter",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_initialSupply",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_decmult",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "subs",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "startTime",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "payPerWeek",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "lastWithdrawTime",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "rootsMatch",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "a",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "b",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "newOwner",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "setRoot",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "data",
+        "type": "bytes32",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "allowance",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_spender",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "multiSubWithdrawFor",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owners",
+        "type": "address[]",
+        "indexed": false
+      },
+      {
+        "name": "_recipients",
+        "type": "address[]",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "LogSubscription",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "subscriber",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "subscribesTo",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "LogCancelSubscription",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "subscriber",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "subscribesTo",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "Mint",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_to",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "Destroy",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "Transfer",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_from",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_to",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "OwnershipChanged",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "prevOwner",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "Approval",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_owner",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_spender",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "_value",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  }
+]

@@ -2,10 +2,11 @@
   "1": "mainnet",
   "3": "ropsten",
   "61": "classic",
-  "62": "morden",
+  "63": "mordor",
   "classic": "classic",
   "main": "mainnet",
   "mainnet": "mainnet",
-  "morden": "morden",
-  "ropsten": "ropsten"
+  "mordor": "mordor",
+  "ropsten": "ropsten",
+  "qtumTestnet": "qtumTestnet"
 }

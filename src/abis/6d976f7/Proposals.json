@@ -1,0 +1,447 @@
+[
+  {
+    "name": "proposals",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "action",
+        "type": "bytes32",
+        "indexed": false
+      },
+      {
+        "name": "expiry",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "validator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "newThreshold",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "supportCount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "passed",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "votingPeriod",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "closeProposal",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_proposalId",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "setValidator",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_validator",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "changeOwnership",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_newOwner",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "validator",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "voteForProposal",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_proposalId",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "_support",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "acceptOwnership",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "proposeNewValidator",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_validator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_newThreshold",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "actions",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "owner",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "proposeRemoveValidator",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_validator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "_newThreshold",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "newOwner",
+    "type": "function",
+    "payable": false,
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "constant": true,
+    "anonymous": false
+  },
+  {
+    "name": "proposeNewThreshold",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_newThreshold",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "updateVotingPeriod",
+    "type": "function",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "_t",
+        "type": "uint256",
+        "indexed": false
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "",
+    "type": "constructor",
+    "payable": false,
+    "inputs": [],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "LogVoted",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "voter",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "support",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "LogProposalCreated",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "newValidator",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "newThreshold",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "creator",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "expiry",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "action",
+        "type": "bytes32",
+        "indexed": true
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "LogProposalClosed",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "indexed": true
+      },
+      {
+        "name": "newValidator",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "newThreshold",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "action",
+        "type": "bytes32",
+        "indexed": true
+      },
+      {
+        "name": "expiry",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "supportCount",
+        "type": "uint256",
+        "indexed": false
+      },
+      {
+        "name": "passed",
+        "type": "bool",
+        "indexed": false
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  },
+  {
+    "name": "OwnershipChanged",
+    "type": "event",
+    "payable": false,
+    "inputs": [
+      {
+        "name": "prevOwner",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true
+      }
+    ],
+    "outputs": null,
+    "constant": false,
+    "anonymous": false
+  }
+]
