@@ -37,7 +37,7 @@ Numeric chain IDs can also be used.
 
 ### `metronomeContracts.{contractName}`
 
-The instance of the Metronome contracts will have a property for each contract: `Auctions`, `AutonomousConverter`, `METToken`, `TokenPorter` and `Validator`.
+The instance of the Metronome contracts will have a property for each contract: `Auctions`, `AutonomousConverter`, `METToken`, `Proposals`, `TokenPorter` and `Validator`.
 Each contract is an instance of `web3.eth.Contract`.
 
 ### `MetronomeContracts.{chain}.{contractName}`
